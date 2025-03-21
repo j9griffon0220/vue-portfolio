@@ -1,9 +1,11 @@
 <script setup>
+import GlobalNav from '@/components/GlobalNav.vue'
 </script>
 
 <template>
     <header class="bg-gray-100">
-    <h1>Ayako Nakayama portfolio</h1>
+        <GlobalNav />
+    <!--  -->
     </header>
 </template>
 
