@@ -5,15 +5,12 @@ import Footer from '@/components/Footer.vue'
 
 <template>
     <Header />
+
+    <!-- メインコンテンツ（各ページのviewsファイルが入る） -->
     <main>
-        <div>
-            <!-- ここに各ページの左エリアが入る -->
-            <slot name="left"></slot>
-        </div>
-        <div>
-            <!-- ここに各ページの右エリアが入る -->
-            <slot name="right"></slot>
-        </div>
+        <router-view />
     </main>
     <Footer />
 </template>
+
+<style scoped></style>
