@@ -1,6 +1,8 @@
 <script setup>
-import BaseLayout from '@/layouts/BaseLayout.vue'
+import { ref } from 'vue'
 import { useHead } from '@vueuse/head'
+import SkillsCategory from '@/components/SkillsCategory.vue'
+import SkillsDetails from '@/components/SkillsDetails.vue'
 
 useHead({
     title: 'Skills | Ayako Nakayama portfolio',
@@ -10,17 +12,19 @@ useHead({
         {property: 'og:url', content: 'https://your-portfolio.com/skills'}
     ]
 })
+
+// 初期状態はフロンドエンド・ 親で状態管理
+const selectedCategory = ref('フロントエンド')
 </script>
 
 <template>
-    <BaseLayout>
-        <!-- 左エリアの内容 -->
-        <template #left>
-            <h1>Skills</h1>
-        </template>
+    <!-- 選択されたカテゴリーを表示 -->
+    <h1>Skill・{{ selectedCategory }}</h1>
+    <!-- 左エリア（カテゴリー選択） -->
+    <SkillsCategory v-model:selected-category="selectedCategory" />
 
-        <!-- 左エリアの内容 -->
-        <template #right>
-        </template>
-    </BaseLayout>
+    <!-- 右エリア（スキル詳細） -->
+    <SkillsDetails :selected-category="selectedCategory" />
 </template>
+
+<style scoped></style>
