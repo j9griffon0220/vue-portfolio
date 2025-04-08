@@ -1,13 +1,14 @@
 // Vueアプリケーションのエントリーポイント
 
-import { createApp } from "vue";
-import { createHead } from "@vueuse/head";
-import "@/style.css";
-import App from "@/App.vue";
-import router from '@/router'; // ルーターをインポート
+import { createApp } from "vue"
+import { createHead } from "@vueuse/head"
+import "@/style.css"
+import App from "@/App.vue"
+import router from '@/router' // ルーターをインポート
+import 'devicon/devicon.min.css' // Devicon CSS をインポート
 
 // Vueアプリを作成して `app` に保存
-const app = createApp(App);
+const app = createApp(App)
 const head = createHead()
 
 // GPT先生と相談のうえ追加 25.3.9
