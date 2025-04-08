@@ -1,5 +1,4 @@
 <script setup>
-import BaseLayout from '@/layouts/BaseLayout.vue'
 import { useHead } from '@vueuse/head'
 
 useHead({
@@ -13,14 +12,14 @@ useHead({
 </script>
 
 <template>
-    <BaseLayout>
+    <div>
         <!-- 左エリアの内容 -->
-        <template #left>
+        <template>
             <h1>About</h1>
         </template>
 
         <!-- 左エリアの内容 -->
-        <template #right>
+        <template>
         </template>
-    </BaseLayout>
+    </div>
 </template>
