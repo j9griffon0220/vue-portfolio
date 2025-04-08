@@ -1,13 +1,10 @@
 <!-- ルーティング管理専用にする -->
-<!-- ここで BaseLayout.vue を使わず、各ページで使う -->
-
 <script setup>
+import BaseLayout from "@/layouts/BaseLayout.vue"
 </script>
 
 <template>
-  <BaseLayout>
-    <router-view />
-  </BaseLayout>
+  <BaseLayout />
 </template>
 
 <style scoped>
