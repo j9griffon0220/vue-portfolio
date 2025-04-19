@@ -18,22 +18,35 @@ const skills = {
     { name: "Vue.js", icon: "devicon-vuejs-plain", description: ""}
     ],
     'バックエンド':[
-    { name: "Laravel", icon: "devicon-laravel-original", description: ""},
-    { name: "PHP", icon: "devicon-php-plain", description: ""}
+    { name: "Laravel", icon: "devicon-laravel-original",
+    description: "サイトをLaravelで制作・公開。ルーティングやバリデーション、Gメール送信機能を実装。"},
+    { name: "PHP", icon: "devicon-php-plain",
+    description: "Laravelを通じてPHPに触れ、Composerを使ったパッケージ管理も経験。"}
     ],
     '環境構築・ツール':[
-    { name: "Docker", icon: "devicon-docker-plain", description: ""},
-    { name: "npm", icon: "devicon-npm-original-wordmark", description: ""},
-    { name: "laravelmix", icon: "", description: ""},
-    { name: "GitHub", icon: "devicon-github-original", description: ""},
-    { name: "SourceTree", icon: "devicon-sourcetree-original", description: ""},
-    { name: "SSH", icon: "devicon-ssh-original", description: ""},
-    { name: "LocalTunnel", icon: "", description: ""}
+    { name: "Docker", icon: "devicon-docker-plain",
+    description: "Laravel開発環境や、自社WordPress案件の学習環境として構築・使用。"},
+    { name: "npm", icon: "devicon-npm-original-wordmark",
+    description: "LaravelやVue開発時に使用。パッケージ管理やビルドを効率化。"},
+    { name: "vite", icon: "devicon-vitejs-plain",
+    description: "Vue開発時のビルドツールとして使用。"},
+    { name: "laravelmix", icon: "",
+    description: "Laravelのフロントエンドビルドに使用。JSのコンパイルに対応。"},
+    { name: "GitHub", icon: "devicon-github-original",
+    description: "Laravelサイトのデプロイやバージョン管理に使用。"},
+    { name: "SourceTree", icon: "devicon-sourcetree-original",
+    description: "Laravelサイト制作・公開時にGit操作に使用。ブランチ管理やコミットを効率化。"},
+    { name: "SSH", icon: "devicon-ssh-original",
+    description: "Laravelサイトのデプロイ時の接続・操作に使用。"},
+    { name: "LocalTunnel", icon: "",
+    description: "Laravelサイトを公開前に関係者に共有・確認してもらうために使用。"}
     ],
     'テスト・その他':[
     { name: "PHPUnit", icon: "", description: ""},
     { name: "Laravel Dusk", icon: "", description: ""},
-    { name: "Playwright", icon: "devicon-playwright-plain", description: ""}
+    { name: "Playwright", icon: "devicon-playwright-plain", description: ""},
+    { name: "WordPress", icon: "devicon-wordpress-plain",
+    description: "Dockerで環境構築。操作・構造の習得に向けて学習中。"}
     ]
 }
 </script>
