@@ -15,13 +15,6 @@ useHead({
 
 <template>
     <div>
-        <!-- 左エリアの内容 -->
-        <template>
-            <h1 class="">Ayako Nakayama portfolio</h1>
-        </template>
-
-        <!-- 左エリアの内容 -->
-        <template>
-        </template>
+        <h1 class="">Ayako Nakayama portfolio</h1>
     </div>
 </template>
