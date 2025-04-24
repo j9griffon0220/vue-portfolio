@@ -1,6 +1,14 @@
 <!-- Worksページ・右側のcomponents -->
 <script setup>
 import { ref } from 'vue'
+import LaravelIntro from '@/components/works/LaravelIntro.vue'
+import VueIntro from '@/components/works/VueIntro.vue'
+import LaravelTech from '@/components/works/LaravelTech.vue'
+import VueTech from '@/components/works/VueTech.vue'
+import LaravelProcess from '@/components/works/LaravelProcess.vue'
+import VueProcess from '@/components/works/VueProcess.vue'
+import LaravelResult from '@/components/works/LaravelResult.vue'
+import VueResult from '@/components/works/VueResult.vue'
 
 // 親から渡される props、definePropsで受け取る
 const props = defineProps({
@@ -13,14 +21,53 @@ const props = defineProps({
     }
 })
 
+// v-forで扱いやすいように「配列＋オブジェクト」のデータ構造に。
+// key（タブ名）とvalue（中身）もとる
 const tabs = [
-    { label: 'Intro', value: 'intro' },
-    { label: 'Tech', value: 'tech' },
-    { label: 'Process', value: 'process' },
-    { label: 'Result', value: 'result' }
+{
+    label: 'Laravel制作サイト',
+    value: 'laravelSite',
+    content: {
+        intro: LaravelIntro,
+        tech: LaravelTech,
+        process: LaravelProcess,
+        result: LaravelResult
+    }
+},
+{
+    label: 'Vueポートフォリオ',
+    value: 'vuePortfolio',
+    content: {
+        intro: VueIntro,
+        tech: VueTech,
+        process: VueProcess,
+        result: VueResult
+    }
+}
 ]
+
+// const tabs = {
+//     laravelSite: {
+//         intro: LaravelIntro,
+//         tech: LaravelTech,
+//         process: LaravelProcess,
+//         result: LaravelResult
+//     },
+//     vuePortfolio: {
+//         intro: VueIntro,
+//         tech: VueTech,
+//         process: VueProcess,
+//         result: VueResult
+//     }
+// }
+
 // デフォルトのタブを指定
 const selectedTab = ref('intro')
+
+// 現在のタブ情報だけを抽出
+const currentTabs = computed(()=>
+return Object.keys()
+)
 
 </script>
 
@@ -30,8 +77,8 @@ const selectedTab = ref('intro')
 
         <!-- タブボタン -->
         <button
-        v-for="tab in tabs"
-        :key="tab.value"
+        v-for="tabkey in currentTabs"
+        :key="tabkey"
         @click="selectedTab = tab.value"
         :class="{ active: selectedTab === tab.value }"
         >
@@ -39,17 +86,18 @@ const selectedTab = ref('intro')
         </button>
 
         <!-- タブの内容・カテゴリーによって各タブ切り替え -->
-        <div v-if="props.selectedCategory === 'laravelSite'">
-            <div v-show="selectedTab === 'intro'">LaravelのIntroの内容</div>
-            <div v-show="selectedTab === 'tech'">LaravelのTechの内容</div>
+        <component :is="selectedCategory === 'laravelSite' ? LaravelIntro : VueIntro"/>
+        <!-- <div v-if="props.selectedCategory === 'laravelSite'">
+            <div v-show="selectedTab === 'intro'">LaravelのIntroの内容</div> -->
+            <!-- <div v-show="selectedTab === 'tech'">LaravelのTechの内容</div>
             <div v-show="selectedTab === 'process'">LaravelのProcessの内容</div>
-            <div v-show="selectedTab === 'result'">LaravelのResultの内容</div>
-        </div>
-        <div v-if="props.selectedCategory === 'vuePortfolio'">
+            <div v-show="selectedTab === 'result'">LaravelのResultの内容</div> -->
+        <!-- </div> -->
+        <!-- <div v-if="props.selectedCategory === 'vuePortfolio'">
             <div v-show="selectedTab === 'intro'">VueポートフォリオのIntroの内容</div>
             <div v-show="selectedTab === 'tech'">VueポートフォリオのTechの内容</div>
             <div v-show="selectedTab === 'process'">VueポートフォリオのProcessの内容</div>
             <div v-show="selectedTab === 'result'">VueポートフォリオのResultの内容</div>
-        </div>
+        </div> -->
     </div>
 </template>
