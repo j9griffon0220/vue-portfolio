@@ -42,5 +42,6 @@ const selectedCategoryLabel = computed(() => {
     <!-- 右エリア（スキル詳細） -->
     <WorksDetails :selected-category="selectedCategory"
     :selected-category-label="selectedCategoryLabel"
+    :categories="categories"
     />
 </template>
