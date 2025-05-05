@@ -12,9 +12,12 @@ const props = defineProps({
 
 const skills = {
     'フロントエンド':[
-    { name: "HTML", icon: "devicon-html5-plain", description: "使用"},
-    { name: "CSS", icon: "devicon-css3-plain", description: ""},
-    { name: "Tailwind CSS", icon: "devicon-tailwindcss-original", description: ""},
+    { name: "HTML", icon: "devicon-html5-plain",
+    description: "W3C Markup Validationを使用し、文法エラーがないようマークアップ。"},
+    { name: "CSS", icon: "devicon-css3-plain",
+    description: "保守性を意識してBEMで設計。相対値やCSS関数を活用し、:root変数で色やフォントを一元管理。"},
+    { name: "Tailwind CSS", icon: "devicon-tailwindcss-original",
+    description: "カスタムCSS関数とTailwindCSSを組み合わせ、レスポンシブと保守性を意識。"},
     { name: "Vue.js", icon: "devicon-vuejs-plain", description: ""}
     ],
     'バックエンド':[
