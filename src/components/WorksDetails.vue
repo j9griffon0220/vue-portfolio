@@ -1,6 +1,6 @@
 <!-- Worksページ・右側のcomponents -->
 <script setup>
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import LaravelIntro from '@/components/works/LaravelIntro.vue'
 import VueIntro from '@/components/works/VueIntro.vue'
 import LaravelTech from '@/components/works/LaravelTech.vue'
@@ -14,60 +14,59 @@ import VueResult from '@/components/works/VueResult.vue'
 const props = defineProps({
     selectedCategory: {
         type: String,
-        default: 'Laravel制作サイト', //デフォルト値を念のため設定
+        default: 'Laravel制作サイト' //デフォルト値を念のため設定
     },
     selectedCategoryLabel: {
-        type: String,
+        type: String
+    },
+    categories: {
+        type: Array,
+        required: true
     }
 })
 
-// v-forで扱いやすいように「配列＋オブジェクト」のデータ構造に。
-// key（タブ名）とvalue（中身）もとる
-const tabs = [
-{
-    label: 'Laravel制作サイト',
-    value: 'laravelSite',
-    content: {
+// デフォルトの「タブのカテゴリ」
+const selectedTab = ref('intro')
+
+console.log(selectedTab.value)
+
+// propsの categories を元に tabs を組み立てる
+const tabsMap = {
+    laravelSite: {
         intro: LaravelIntro,
         tech: LaravelTech,
         process: LaravelProcess,
         result: LaravelResult
-    }
-},
-{
-    label: 'Vueポートフォリオ',
-    value: 'vuePortfolio',
-    content: {
+    },
+    vuePortfolio: {
         intro: VueIntro,
         tech: VueTech,
         process: VueProcess,
         result: VueResult
     }
 }
-]
 
-// const tabs = {
-//     laravelSite: {
-//         intro: LaravelIntro,
-//         tech: LaravelTech,
-//         process: LaravelProcess,
-//         result: LaravelResult
-//     },
-//     vuePortfolio: {
-//         intro: VueIntro,
-//         tech: VueTech,
-//         process: VueProcess,
-//         result: VueResult
+const currentTab = computed(() => {
+    const category = props.selectedCategory
+    const tab = selectedTab.value
+    return tabsMap[category][tab]
+})
+
+console.log(props.categories)
+
+// 元の category に contentMap の情報を加えた新しいオブジェクトを作成
+// const tabs = props.categories.map(category =>{
+//     return{
+//         ...category,
+//         content: contentMap[category.value]
 //     }
-// }
+// })
 
-// デフォルトのタブを指定
-const selectedTab = ref('intro')
+// console.log(currentTabs.value)
+// console.log("selectedTab.value:", selectedTab.value)
+// console.log("tabs:", tabs)
 
-// 現在のタブ情報だけを抽出
-const currentTabs = computed(()=>
-return Object.keys()
-)
+// console.log("比較結果：", tab.value === selectedTab.value)
 
 </script>
 
@@ -75,29 +74,16 @@ return Object.keys()
     <div>
         <h2>{{ selectedCategoryLabel }}</h2>
 
-        <!-- タブボタン -->
+        <!-- タブ切り替えボタン -->
         <button
-        v-for="tabkey in currentTabs"
-        :key="tabkey"
-        @click="selectedTab = tab.value"
-        :class="{ active: selectedTab === tab.value }"
+            v-for = "tab in ['intro', 'tech', 'process', 'result']"
+            :key="tab"
+            @click="selectedTab = tab"
         >
-        {{ tab.label }}
+        {{ tab }}
         </button>
 
-        <!-- タブの内容・カテゴリーによって各タブ切り替え -->
-        <component :is="selectedCategory === 'laravelSite' ? LaravelIntro : VueIntro"/>
-        <!-- <div v-if="props.selectedCategory === 'laravelSite'">
-            <div v-show="selectedTab === 'intro'">LaravelのIntroの内容</div> -->
-            <!-- <div v-show="selectedTab === 'tech'">LaravelのTechの内容</div>
-            <div v-show="selectedTab === 'process'">LaravelのProcessの内容</div>
-            <div v-show="selectedTab === 'result'">LaravelのResultの内容</div> -->
-        <!-- </div> -->
-        <!-- <div v-if="props.selectedCategory === 'vuePortfolio'">
-            <div v-show="selectedTab === 'intro'">VueポートフォリオのIntroの内容</div>
-            <div v-show="selectedTab === 'tech'">VueポートフォリオのTechの内容</div>
-            <div v-show="selectedTab === 'process'">VueポートフォリオのProcessの内容</div>
-            <div v-show="selectedTab === 'result'">VueポートフォリオのResultの内容</div>
-        </div> -->
+        <!-- 選択されたカテゴリーとタブに応じたコンポーネント -->
+        <component v-if="currentTab" :is="currentTab" />
     </div>
 </template>
