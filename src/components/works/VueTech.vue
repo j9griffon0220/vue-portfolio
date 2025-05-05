@@ -3,5 +3,5 @@
 
 <template>
     <h3>概要</h3>
-    <p>これはlaravel技術です</p>
+    <p>これはvue技術です</p>
 </template>
