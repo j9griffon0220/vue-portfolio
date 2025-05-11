@@ -3,10 +3,8 @@
 import { computed, ref } from 'vue'
 import LaravelIntro from '@/components/works/LaravelIntro.vue'
 import VueIntro from '@/components/works/VueIntro.vue'
-import LaravelTech from '@/components/works/LaravelTech.vue'
-import VueTech from '@/components/works/VueTech.vue'
-import LaravelProcess from '@/components/works/LaravelProcess.vue'
-import VueProcess from '@/components/works/VueProcess.vue'
+import LaravelApproach from '@/components/works/LaravelApproach.vue'
+import VueApproach from '@/components/works/VueApproach.vue'
 import LaravelResult from '@/components/works/LaravelResult.vue'
 import VueResult from '@/components/works/VueResult.vue'
 
@@ -34,14 +32,12 @@ console.log(selectedTab.value)
 const tabsMap = {
     laravelSite: {
         intro: LaravelIntro,
-        tech: LaravelTech,
-        process: LaravelProcess,
+        approach: LaravelApproach,
         result: LaravelResult
     },
     vuePortfolio: {
         intro: VueIntro,
-        tech: VueTech,
-        process: VueProcess,
+        approach: VueApproach,
         result: VueResult
     }
 }
@@ -53,14 +49,6 @@ const currentTab = computed(() => {
 })
 
 console.log(props.categories)
-
-// 元の category に contentMap の情報を加えた新しいオブジェクトを作成
-// const tabs = props.categories.map(category =>{
-//     return{
-//         ...category,
-//         content: contentMap[category.value]
-//     }
-// })
 
 // console.log(currentTabs.value)
 // console.log("selectedTab.value:", selectedTab.value)
@@ -76,7 +64,7 @@ console.log(props.categories)
 
         <!-- タブ切り替えボタン -->
         <button
-            v-for = "tab in ['intro', 'tech', 'process', 'result']"
+            v-for = "tab in ['intro', 'approach', 'result']"
             :key="tab"
             @click="selectedTab = tab"
         >
