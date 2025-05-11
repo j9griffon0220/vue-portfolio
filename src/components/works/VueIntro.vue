@@ -2,6 +2,7 @@
 <script setup></script>
 
 <template>
-    <h3>概要</h3>
+    <h3>サイト概要</h3>
+    <!-- スクリーンショット画像 imgタグ -->
     <p>これはvue概要です</p>
 </template>
