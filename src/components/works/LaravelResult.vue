@@ -2,6 +2,8 @@
 <script setup></script>
 
 <template>
-    <h3>概要</h3>
-    <p>これはlaravelResultです</p>
+    <h3>成果・振り返り</h3>
+
+    <h4>成果</h4>
+    <p></p>
 </template>
