@@ -2,7 +2,7 @@
 <script setup></script>
 
 <template>
-    <h3>サイト概要</h3>
-    <!-- スクリーンショット画像 imgタグ -->
-    <p>これはvue概要です</p>
+  <h3 class="font-ibm font-medium">サイト概要</h3>
+  <!-- スクリーンショット画像 imgタグ -->
+  <p class="font-ibm font-normal">これはvue概要です</p>
 </template>
