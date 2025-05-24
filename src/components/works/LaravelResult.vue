@@ -2,8 +2,8 @@
 <script setup></script>
 
 <template>
-    <h3>成果・振り返り</h3>
+  <h3 class="font-ibm text-charcoal-gray font-medium">成果・振り返り</h3>
 
-    <h4>成果</h4>
-    <p></p>
+  <h4 class="font-ibm text-charcoal-gray font-medium">成果</h4>
+  <p class="font-ibm text-soft-gray font-normal">こんな成果が〜</p>
 </template>
