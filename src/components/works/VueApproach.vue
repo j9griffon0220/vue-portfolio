@@ -2,6 +2,6 @@
 <script setup></script>
 
 <template>
-    <h3>概要</h3>
-    <p>これはvueApproachです</p>
+  <h3 class="font-ibm font-medium">概要</h3>
+  <p class="font-ibm font-normal">これはvueApproachです</p>
 </template>
