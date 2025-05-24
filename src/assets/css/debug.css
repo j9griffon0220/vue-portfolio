@@ -1,0 +1,4 @@
+/* debug.css - 作業確認用アウトライン */
+* {
+  outline: 1px solid #bfe6ff;
+}
