@@ -2,11 +2,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 // 各ページコンポーネントを読み込む
-import Home from '@/views/Home.vue'
-import About from '@/views/About.vue'
-import Skills from '@/views/Skills.vue'
-import Works from '@/views/Works.vue'
-import Note from '@/views/Note.vue'
+import Home from '@/views/HomePage.vue'
+import About from '@/views/AboutPage.vue'
+import Skills from '@/views/SkillsPage.vue'
+import Works from '@/views/WorksPage.vue'
+import Note from '@/views/NotePage.vue'
 
 // routes の component に importしたコンポーネントを指定
 const routes = [
