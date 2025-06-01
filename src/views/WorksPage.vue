@@ -31,26 +31,34 @@ const selectedCategoryLabel = computed(() => {
 
 <template>
   <!-- 選択されたカテゴリーを表示 -->
-  <h1
-    class="font-ibm text-nuance-brown text-center text-[calc(1.6rem+0.35vw)] leading-[1.25] font-semibold"
-  >
-    Works・{{ selectedCategoryLabel }}
-  </h1>
-  <div class="flex flex-grow basis-1/2 flex-wrap">
-    <!-- 左エリア（カテゴリー選択） -->
-    <WorksCategory
-      class="max-w-1/2 flex-grow"
-      :categories="categories"
-      :selected-category="selectedCategory"
-      @update:selected-category="selectedCategory = $event"
-    />
+  <div class="pt-[clamp(1.95rem,1.95rem+0.30vw,2.44rem)]">
+    <h1
+      class="font-ibm text-nuance-brown text-center text-[calc(1.8rem+0.3vw)] leading-[1.2] font-semibold break-words"
+    >
+      Works・{{ selectedCategoryLabel }}
+    </h1>
+    <div
+      class="flex min-h-0 w-full flex-1 flex-wrap pt-[clamp(2.44rem,2.44rem+0.35vw,3.05rem)] text-center"
+    >
+      <!-- <div class="flex h-full flex-wrap"> -->
+      <!-- 左エリア（カテゴリー選択） -->
+      <WorksCategory
+        class="flex-shrink-0 flex-grow basis-[30ch]"
+        :categories="categories"
+        :selected-category="selectedCategory"
+        @update:selected-category="selectedCategory = $event"
+      />
+      <!-- class="flex-shrink-0 flex-grow basis-[20rem]" -->
+      <!-- class="min-w-0 flex-grow basis-1/2"-->
+      <!-- class="max-w-[50%] flex-[1_1_50%]" -->
 
-    <!-- 右エリア（スキル詳細） -->
-    <WorksDetails
-      class="max-w-1/2 flex-grow"
-      :selected-category="selectedCategory"
-      :selected-category-label="selectedCategoryLabel"
-      :categories="categories"
-    />
+      <!-- 右エリア（スキル詳細） -->
+      <WorksDetails
+        class="h flex-shrink-0 flex-grow basis-[30ch] overflow-auto"
+        :selected-category="selectedCategory"
+        :selected-category-label="selectedCategoryLabel"
+        :categories="categories"
+      />
+    </div>
   </div>
 </template>
