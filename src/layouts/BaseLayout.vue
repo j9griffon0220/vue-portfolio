@@ -9,13 +9,17 @@ import Footer from '@/components/SiteFooter.vue'
 
 <template>
   <div class="bg-nuance-gray">
-    <div class="mx-auto max-w-[90vw]">
+    <div
+      class="mx-auto h-screen max-w-[90vw] pt-[clamp(1.56rem,1.56rem+0.25vw,1.95rem)]"
+    >
+      <!-- 高さ指定なし -->
       <Header />
 
       <!-- メインコンテンツ（各ページのviewsファイルが入る） -->
-      <main>
+      <main class="mx-auto max-w-[85vw] flex-1 overflow-hidden">
         <router-view />
       </main>
+      <!-- 高さ指定なし -->
       <Footer />
     </div>
   </div>
