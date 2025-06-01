@@ -60,7 +60,7 @@ console.log(props.categories)
 <template>
   <div>
     <h2
-      class="font-ibm text-charcoal-gray text-[calc(1.4rem+0.3vw)] leading-[1.3] font-medium"
+      class="font-ibm text-charcoal-gray text-[calc(1.51rem+0.29vw)] leading-[1.3] font-medium"
     >
       {{ selectedCategoryLabel }}
     </h2>
