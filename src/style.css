@@ -24,12 +24,12 @@
   --color-chic-brown: #6d5d50; /*  */
 }
 
-/* 本文 calc(0.9rem + 0.25vw) を基準にしたモジュラースケール 25.5.21 */
+/* 本文 calc(0.9rem + 0.25vw) を基準にしたスケール比 1.19固定のモジュラースケール 25.5.29 */
 /* fontSize
-h1: calc(1.6rem+0.35vw)
-h2: calc(1.4rem+0.3vw)
-h3: calc(1.2rem+0.27vw)
-h4: calc(1.05rem+0.25vw)
+h1: calc(1.8rem+0.3vw)
+h2: calc(1.51rem+0.29vw)
+h3: calc(1.27rem+0.27vw)
+h4: calc(1.07rem+0.26vw)
 p: calc(0.9rem+0.25vw)
 */
 
@@ -39,3 +39,16 @@ h2: 1.3
 h3: 1.4
 p・h4: 1.5
 */
+
+
+/* スケール比 1.25 固定 × clamp() × vw 四捨五入モジュラースケール 25.5.29 */
+
+/* scale5: clamp(3.05rem,3.05rem+0.40vw,3.81rem);   /* 2.44 × 1.25 */
+/* scale4: clamp(2.44rem,2.44rem+0.35vw,3.05rem);   /* 1.95 × 1.25 */
+/* scale3: clamp(1.95rem,1.95rem+0.30vw,2.44rem);   /* 1.56 × 1.25 */
+/* scale2: clamp(1.56rem,1.56rem+0.25vw,1.95rem);   /* 1.25 × 1.25*/
+/* scale1: clamp(1.25rem,1.25rem+0.20vw,1.56rem);   /* 1rem × 1.25^1 */
+/* scale0: clamp(1rem,1rem+0vw,1rem);  基準サイズ */
+/* scale-1: clamp(0.8rem,0.8rem+0.15vw,1rem);   /* 1rem ÷ 1.25 */
+/* scale-2: clamp(0.64rem,0.64rem+0.12vw,0.8rem);   /* 0.8rem ÷ 1.25 */
+/* scale-3: clamp(0.51rem,0.51rem+0.1vw,0.64rem);   /* 0.64 ÷ 1.25 */
