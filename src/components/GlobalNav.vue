@@ -11,7 +11,7 @@ const navItems = [
 <template>
   <nav>
     <ul
-      class="font-ibm text-charcoal-gray flex max-w-full list-none items-center justify-between font-normal"
+      class="font-ibm text-charcoal-gray mb-[clamp(3.05rem,3.05rem+0.40vw,3.81rem)] flex max-w-full list-none items-center justify-between font-normal"
     >
       <li
         v-for="item in navItems"
