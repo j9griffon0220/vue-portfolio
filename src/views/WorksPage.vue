@@ -31,15 +31,13 @@ const selectedCategoryLabel = computed(() => {
 
 <template>
   <!-- 選択されたカテゴリーを表示 -->
-  <div class="pt-[clamp(1.95rem,1.95rem+0.30vw,2.44rem)]">
+  <div class="">
     <h1
-      class="font-ibm text-nuance-brown text-center text-[calc(1.8rem+0.3vw)] leading-[1.2] font-semibold break-words"
+      class="font-ibm text-nuance-brown mb-[clamp(2.44rem,2.44rem+0.35vw,3.05rem)] text-center text-[calc(1.8rem+0.3vw)] leading-[1.2] font-semibold break-words"
     >
       Works・{{ selectedCategoryLabel }}
     </h1>
-    <div
-      class="flex min-h-0 w-full flex-1 flex-wrap pt-[clamp(2.44rem,2.44rem+0.35vw,3.05rem)] text-center"
-    >
+    <div class="flex min-h-0 w-full flex-1 flex-wrap">
       <!-- <div class="flex h-full flex-wrap"> -->
       <!-- 左エリア（カテゴリー選択） -->
       <WorksCategory
@@ -54,7 +52,7 @@ const selectedCategoryLabel = computed(() => {
 
       <!-- 右エリア（スキル詳細） -->
       <WorksDetails
-        class="h flex-shrink-0 flex-grow basis-[30ch] overflow-auto"
+        class="flex-shrink-0 flex-grow basis-[30ch] overflow-auto"
         :selected-category="selectedCategory"
         :selected-category-label="selectedCategoryLabel"
         :categories="categories"
