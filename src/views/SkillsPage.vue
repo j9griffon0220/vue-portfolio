@@ -19,12 +19,24 @@ const selectedCategory = ref('フロントエンド')
 
 <template>
   <!-- 選択されたカテゴリーを表示 -->
-  <h1>Skill・{{ selectedCategory }}</h1>
-  <!-- 左エリア（カテゴリー選択） -->
-  <SkillsCategory v-model:selected-category="selectedCategory" />
+  <h1
+    class="font-ibm text-nuance-brown mb-[clamp(2.44rem,2.44rem+0.35vw,3.05rem)] text-center text-[calc(1.8rem+0.3vw)] leading-[1.2] font-semibold break-words"
+  >
+    Skill・{{ selectedCategory }}
+  </h1>
+  <div class="flex min-h-0 w-full flex-1 flex-wrap">
+    <!-- 左エリア（カテゴリー選択） -->
+    <SkillsCategory
+      class="flex-shrink-0 flex-grow basis-[30ch]"
+      v-model:selected-category="selectedCategory"
+    />
 
-  <!-- 右エリア（スキル詳細） -->
-  <SkillsDetails :selected-category="selectedCategory" />
+    <!-- 右エリア（スキル詳細） -->
+    <SkillsDetails
+      class="flex-shrink-0 flex-grow basis-[30ch] overflow-auto"
+      :selected-category="selectedCategory"
+    />
+  </div>
 </template>
 
 <style scoped></style>
