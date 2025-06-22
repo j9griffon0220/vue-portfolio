@@ -1,7 +1,7 @@
 <!-- アイコンの管理を一元化・再利用性を高める -->
 <script setup>
 // importや状態の定義
-import { defineAsyncComponent, computed, defineProps } from 'vue'
+import { defineAsyncComponent, defineProps } from 'vue'
 
 // 'name'を受け取り対応するSVGを動的に取り込む
 const props = defineProps({
