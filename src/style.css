@@ -22,6 +22,8 @@
   --color-gray-green: #a3c6c3;
   --color-warm-gray: #b7afaf; /* 罫線 */
   --color-chic-brown: #6d5d50; /*  */
+  --color-smoky-aqua: #8ca8ae;
+  --color-dusty-blue: #a0b5be;
 }
 
 /* 本文 calc(0.9rem + 0.25vw) を基準にしたスケール比 1.19固定のモジュラースケール 25.5.29 */
