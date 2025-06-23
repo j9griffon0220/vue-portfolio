@@ -2,6 +2,7 @@
 //import BaseLayout from '@/layouts/BaseLayout.vue'
 import { ref } from 'vue'
 import { useHead } from '@vueuse/head'
+import HeroAnimation from '@/components/animation/HeroAnimation.vue'
 
 useHead({
   title: 'Ayako Nakayama portfolio',
@@ -15,10 +16,6 @@ useHead({
 
 <template>
   <div>
-    <h1
-      class="font-roboto text-nuance-brown text-[calc(1.6rem+0.35vw)] leading-[1.2] font-semibold"
-    >
-      Ayako Nakayama portfolio
-    </h1>
+    <HeroAnimation />
   </div>
 </template>
