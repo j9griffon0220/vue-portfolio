@@ -34,12 +34,14 @@ const skills = {
     {
       name: 'JavaScript',
       icon: 'javascript',
-      description: '記述これから',
+      description:
+        'Leafletなどのプラグインを用い、動的な地図描画やLaravelとの連携を実装。',
     },
     {
       name: 'jQuery',
       icon: 'jquery',
-      description: '',
+      description:
+        'LaravelサイトのUI補助やフォーム制御を中心に、jQueryで軽量な動きを実装。',
     },
     {
       name: 'Vue.js',
@@ -108,9 +110,17 @@ const skills = {
     },
   ],
   'テスト・その他': [
-    { name: 'PHPUnit', icon: '', description: '' },
+    {
+      name: 'PHPUnit',
+      icon: '',
+      description: '',
+    },
     { name: 'Laravel Dusk', icon: '', description: '' },
-    { name: 'Playwright', icon: 'playwright', description: '' },
+    {
+      name: 'Playwright',
+      icon: 'playwright',
+      description: 'UIの動作確認を目的に、E2Eテストコードを作成・実行。',
+    },
     {
       name: 'WordPress',
       icon: 'wordpress',
