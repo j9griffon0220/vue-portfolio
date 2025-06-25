@@ -40,10 +40,12 @@ const startAnimation = () => {
     setTimeout(() => {
       // アイコン中央集合
       step.value = 1
+      const centerX = window.innerWidth / 2 - 24 // アイコンサイズ48pxの半分
+      const centerY = window.innerHeight / 2 - 24
       floatingIcons.value.forEach((icon, i) => {
         setTimeout(() => {
-          icon.x = window.innerWidth / 2 - 25
-          icon.y = window.innerHeight / 2 - 25
+          icon.x = centerX
+          icon.y = centerY
           icon.scale = 0.3
         }, i * 50)
       })
@@ -69,9 +71,11 @@ const skip = () => {
   showTitle.value = true
   step.value = 2
   isAnimating.value = false
+  const centerX = window.innerWidth / 2 - 24
+  const centerY = window.innerHeight / 2 - 24
   floatingIcons.value = skillIcons.map(() => ({
-    x: window.innerWidth / 2 - 25,
-    y: window.innerHeight / 2 - 25,
+    x: centerX,
+    y: centerY,
     opacity: 1,
     scale: 0.3
   }))
