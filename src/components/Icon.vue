@@ -17,8 +17,19 @@ const iconComponent = defineAsyncComponent(
 </script>
 
 <template>
-  <component :is="iconComponent" />
+  <component :is="iconComponent" class="icon-svg" />
 </template>
 
 <!-- 必要ならスタイル -->
-<style scoped></style>
+<style scoped>
+.icon-svg {
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  display: block;
+}
+
+.icon-svg :deep(path) {
+  fill: currentColor;
+}
+</style>
