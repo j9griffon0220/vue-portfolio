@@ -8,7 +8,7 @@ import Footer from '@/components/SiteFooter.vue'
 </script>
 
 <template>
-  <div class="bg-nuance-gray">
+  <div class="bg-gradient-test min-h-screen">
     <div
       class="mx-auto h-screen max-w-[90vw] pt-[clamp(1.56rem,1.56rem+0.25vw,1.95rem)]"
     >
