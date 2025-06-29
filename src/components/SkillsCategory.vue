@@ -20,7 +20,7 @@ const handleCategorySelect = (category) => {
 <template>
   <ul>
     <li
-      class="font-ibm text-charcoal-gray text-[calc(0.9rem+0.25vw)] leading-[1.5] font-normal"
+      class="font-ibm text-charcoal-gray mb-[clamp(1.95rem,1.95rem+0.30vw,2.44rem)] text-[calc(0.9rem+0.25vw)] leading-[1.5] font-normal"
       v-for="category in categories"
       :key="category"
       @click="handleCategorySelect(category)"
