@@ -5,7 +5,7 @@ import DeviconCloud from './DeviconCloud.vue'
 import WhiteoutOverlay from './WhiteoutOverlay.vue'
 import TitleReveal from './TitleReveal.vue'
 
-// ステート
+// ステート・各要素の表示/非表示を管理
 const step = ref(0)
 const isAnimating = ref(true)
 const showEdit = ref(false)
@@ -38,17 +38,25 @@ const startAnimation = () => {
       }, i * 100)
     })
     setTimeout(() => {
-      // アイコン中央集合
+      // アイコン中央集合（同時にフェードアウト）
       step.value = 1
-      const centerX = window.innerWidth / 2 - 24 // アイコンサイズ48pxの半分
-      const centerY = window.innerHeight / 2 - 24
+      const centerX = window.innerWidth / 2 // 画面中央
+      const centerY = (window.innerHeight / 2) - 40 // edit文字の中心位置に調整
       floatingIcons.value.forEach((icon, i) => {
         setTimeout(() => {
           icon.x = centerX
           icon.y = centerY
           icon.scale = 0.3
+          // 段階的なフェードアウト
+          setTimeout(() => {
+            icon.opacity = 0.5
+            setTimeout(() => {
+              icon.opacity = 0
+            }, 200)
+          }, 100)
         }, i * 50)
       })
+      
       setTimeout(() => {
         // ホワイトアウト
         showEdit.value = false
@@ -76,7 +84,7 @@ const skip = () => {
   floatingIcons.value = skillIcons.map(() => ({
     x: centerX,
     y: centerY,
-    opacity: 1,
+    opacity: 0,
     scale: 0.3
   }))
 }
