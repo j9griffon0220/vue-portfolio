@@ -14,19 +14,13 @@ defineProps({
       left: `${icon.x}px`,
       top: `${icon.y}px`,
       opacity: icon.opacity,
-      transform: `scale(${icon.scale})`,
+      transform: `translate(-50%, -50%) scale(${icon.scale})`,
       zIndex: step === 1 ? 20 : 5
     }"
   >
-    <Icon :name="skillIcons[index]" class="w-full h-full text-white" />
+    <Icon :name="skillIcons[index]" class="w-full h-full text-accent-gray" />
   </div>
 </template>
 
 <style scoped>
-/* アイコンの背景やボーダーを完全に削除 */
-:deep(svg) {
-  background: transparent !important;
-  border: none !important;
-  outline: none !important;
-}
 </style>
