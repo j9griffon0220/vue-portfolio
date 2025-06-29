@@ -20,7 +20,7 @@ const selectedCategory = ref('フロントエンド')
 <template>
   <!-- 選択されたカテゴリーを表示 -->
   <h1
-    class="font-ibm text-nuance-brown mb-[clamp(2.44rem,2.44rem+0.35vw,3.05rem)] text-center text-[calc(1.8rem+0.3vw)] leading-[1.2] font-semibold break-words"
+    class="font-ibm text-charcoal-gray mb-[clamp(2.44rem,2.44rem+0.35vw,3.05rem)] text-center text-[calc(1.8rem+0.3vw)] leading-[1.2] font-semibold break-words"
   >
     Skill・{{ selectedCategory }}
   </h1>
