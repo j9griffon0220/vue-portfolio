@@ -65,17 +65,32 @@ console.log(props.categories)
       {{ selectedCategoryLabel }}
     </h2>
 
-    <!-- タブ切り替えボタン -->
-    <button
-      v-for="tab in ['intro', 'approach', 'result']"
-      :key="tab"
-      @click="selectedTab = tab"
-      class="font-ibm text-charcoal-gray text-[calc(0.9rem+0.25vw)] leading-[1.5] font-normal"
-    >
-      {{ tab }}
-    </button>
-
-    <!-- 選択されたカテゴリーとタブに応じたコンポーネント -->
-    <component v-if="currentTab" :is="currentTab" />
+    <!-- タブコンテナ -->
+    <div class="flex flex-col">
+      <!-- タブヘッダー -->
+      <div class="flex border-b border-charcoal-gray/20 mb-[clamp(1.5rem,1.5rem+1vw,2.5rem)]">
+        <button
+          v-for="tab in ['intro', 'approach', 'result']"
+          :key="tab"
+          @click="selectedTab = tab"
+          :class="[
+            'relative px-[clamp(1rem,1rem+1vw,2rem)] py-[clamp(0.75rem,0.75rem+0.5vw,1.25rem)] font-ibm text-[calc(0.9rem+0.25vw)] font-medium transition-colors duration-200',
+            selectedTab === tab
+              ? 'text-charcoal-gray after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-charcoal-gray'
+              : 'text-charcoal-gray/60 hover:text-charcoal-gray/80 hover:bg-charcoal-gray/5'
+          ]"
+          :aria-selected="selectedTab === tab"
+          :aria-controls="`tabpanel-${tab}`"
+          role="tab"
+        >
+          {{ tab }}
+        </button>
+      </div>
+      
+      <!-- タブコンテンツ -->
+      <div class="pt-[clamp(1rem,1rem+0.5vw,1.5rem)] pb-[clamp(1rem,1rem+0.5vw,1.5rem)]">
+        <component v-if="currentTab" :is="currentTab" />
+      </div>
+    </div>
   </div>
 </template>
