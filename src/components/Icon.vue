@@ -22,14 +22,4 @@ const iconComponent = defineAsyncComponent(
 
 <!-- 必要ならスタイル -->
 <style scoped>
-.icon-svg {
-  background: transparent !important;
-  border: none !important;
-  outline: none !important;
-  display: block;
-}
-
-.icon-svg :deep(path) {
-  fill: currentColor;
-}
 </style>
