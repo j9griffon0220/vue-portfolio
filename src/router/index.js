@@ -6,7 +6,7 @@ import Home from '@/views/HomePage.vue'
 import About from '@/views/AboutPage.vue'
 import Skills from '@/views/SkillsPage.vue'
 import Works from '@/views/WorksPage.vue'
-import Note from '@/views/NotePage.vue'
+// import Note from '@/views/NotePage.vue'
 
 // routes の component に importしたコンポーネントを指定
 const routes = [
@@ -14,7 +14,7 @@ const routes = [
   { path: '/about', component: About },
   { path: '/skills', component: Skills },
   { path: '/works', component: Works },
-  { path: '/note', component: Note },
+  // { path: '/note', component: Note },
 ]
 
 const router = createRouter({
