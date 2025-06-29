@@ -18,12 +18,25 @@ const skillIcons = [
 const floatingIcons = ref([])
 
 // ランダム位置生成
-const generateRandomPosition = () => ({
-  x: Math.random() * (window.innerWidth - 100),
-  y: Math.random() * (window.innerHeight - 100),
-  opacity: 0,
-  scale: 0.5
-})
+const generateRandomPosition = () => {
+  // メインコンテンツのmax-w-[85vw]を考慮した展開幅計算
+  const viewportWidth = window.innerWidth
+  const maxContentWidth = viewportWidth * 0.85 // mainのmax-w-[85vw]
+  
+  // 実際に使用可能な幅（中央寄せを考慮）
+  const startX = (viewportWidth - maxContentWidth) / 2
+  
+  // アイコンサイズを考慮したマージン計算
+  // calc(1.8rem + 0.3vw) の最大値を考慮（約40-50px程度）
+  const iconMargin = 60
+  
+  return {
+    x: startX + Math.random() * (maxContentWidth - iconMargin),
+    y: Math.random() * (window.innerHeight - iconMargin),
+    opacity: 0,
+    scale: 0.5
+  }
+}
 
 // アニメーション進行
 const startAnimation = () => {
@@ -40,7 +53,11 @@ const startAnimation = () => {
     setTimeout(() => {
       // アイコン中央集合（同時にフェードアウト）
       step.value = 1
-      const centerX = window.innerWidth / 2 // 画面中央
+      // メインコンテンツのmax-w-[85vw]を考慮した中央位置を計算
+      const viewportWidth = window.innerWidth
+      const maxContentWidth = viewportWidth * 0.85
+      const startX = (viewportWidth - maxContentWidth) / 2
+      const centerX = startX + (maxContentWidth / 2) // コンテンツ領域の中央
       const centerY = (window.innerHeight / 2) - 40 // edit文字の中心位置に調整
       floatingIcons.value.forEach((icon, i) => {
         setTimeout(() => {
@@ -79,8 +96,14 @@ const skip = () => {
   showTitle.value = true
   step.value = 2
   isAnimating.value = false
-  const centerX = window.innerWidth / 2 - 24
+  
+  // メインコンテンツのmax-w-[85vw]を考慮した中央位置を計算
+  const viewportWidth = window.innerWidth
+  const maxContentWidth = viewportWidth * 0.85
+  const startX = (viewportWidth - maxContentWidth) / 2
+  const centerX = startX + (maxContentWidth / 2) - 24
   const centerY = window.innerHeight / 2 - 24
+  
   floatingIcons.value = skillIcons.map(() => ({
     x: centerX,
     y: centerY,
