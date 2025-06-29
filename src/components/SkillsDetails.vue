@@ -139,13 +139,13 @@ const skills = {
     </h2>
     <ul class="">
       <li
-        class="font-ibm text-charcoal-gray flex items-start space-x-[clamp(1.95rem,1.95rem+0.30vw,2.44rem)] text-[calc(0.9rem+0.25vw)] leading-[1.5] font-normal"
+        class="font-ibm text-charcoal-gray mb-[clamp(1.56rem,1.56rem+0.25vw,1.95rem)] flex items-start space-x-[clamp(1.95rem,1.95rem+0.30vw,2.44rem)] text-[calc(0.9rem+0.25vw)] leading-[1.5] font-normal"
         v-for="skill in skills[selectedCategory]"
         :key="skill.name"
       >
         <Icon
           :name="skill.icon"
-          class="text-smoky-aqua inline-block h-[calc(1.8rem+0.3vw)] w-[calc(1.8rem+0.3vw)] shrink-0"
+          class="text-accent-gray inline-block h-[calc(1.8rem+0.3vw)] w-[calc(1.8rem+0.3vw)] shrink-0"
         />
         <span>{{ skill.name }}- {{ skill.description }}</span>
       </li>
