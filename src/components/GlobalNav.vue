@@ -4,7 +4,7 @@ const navItems = [
   { text: 'About', link: '/about' },
   { text: 'Skills', link: '/Skills' },
   { text: 'Works', link: '/works' },
-  { text: 'Note', link: '/note' },
+  // { text: 'Note', link: '/note' },
 ]
 </script>
 
