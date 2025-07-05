@@ -96,6 +96,20 @@ h3: 1.4
 p・h4: 1.5
 */
 
+/* タブラインのアニメーション */
+@keyframes tab-line {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.animate-tab-line {
+  animation: tab-line 0.3s ease-out forwards;
+}
+
 
 /* スケール比 1.25 固定 × clamp() × vw 四捨五入モジュラースケール 25.5.29 */
 
