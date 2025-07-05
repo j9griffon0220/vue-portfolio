@@ -10,7 +10,7 @@ import Footer from '@/components/SiteFooter.vue'
 <template>
   <div class="bg-gradient-test min-h-screen">
     <div
-      class="mx-auto h-screen max-w-[90vw] pt-[clamp(1.56rem,1.56rem+0.25vw,1.95rem)]"
+      class="mx-auto max-w-[90vw] pt-[clamp(1.56rem,1.56rem+0.25vw,1.95rem)]"
     >
       <!-- 高さ指定なし -->
       <Header />
