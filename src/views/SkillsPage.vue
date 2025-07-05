@@ -24,10 +24,10 @@ const selectedCategory = ref('フロントエンド')
   >
     Skill・{{ selectedCategory }}
   </h1>
-  <div class="flex min-h-0 w-full flex-1 flex-wrap">
+  <div class="h-screen flex min-h-0 w-full flex-1 flex-wrap">
     <!-- 左エリア（カテゴリー選択） -->
     <SkillsCategory
-      class="flex-shrink-0 flex-grow basis-[30ch]"
+      class="flex-shrink-0 flex-grow basis-[30ch] overflow-visible"
       v-model:selected-category="selectedCategory"
     />
 
