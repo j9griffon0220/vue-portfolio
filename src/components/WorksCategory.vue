@@ -20,12 +20,23 @@ const handleClick = (value) => {
 <template>
   <ul>
     <li
+      v-for="category in categories"
+      :key="category.value"
+      @click="handleClick(category.value)"
+      :class="[
+        'font-ibm mb-[clamp(1.95rem,1.95rem+0.30vw,2.44rem)] max-w-8/10 px-4 py-2 text-[calc(0.85rem+0.2vw)] leading-[1.5] font-medium transition-colors duration-200 ease-in-out',
+        category.value === selectedCategory
+          ? 'text-charcoal-gray hover:bg-charcoal-gray/5 active:bg-charcoal-gray/50 active:text-gradation-white'
+          : 'text-charcoal-gray/60 hover:bg-charcoal-gray/5',
+      ]"
+    >
+      <!-- <li
       class="font-ibm text-charcoal-gray mb-[clamp(1.95rem,1.95rem+0.30vw,2.44rem)] text-[calc(0.9rem+0.25vw)] leading-[1.5] font-normal"
       v-for="category in categories"
       :key="category.value"
       :class="{ active: category.value === selectedCategory }"
       @click="handleClick(category.value)"
-    >
+    > -->
       {{ category.label }}
     </li>
   </ul>
