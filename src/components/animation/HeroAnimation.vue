@@ -33,9 +33,9 @@ const floatingIcons = ref([])
 
 // ランダム位置生成
 const generateRandomPosition = () => {
-  // メインコンテンツのmax-w-[85vw]を考慮した展開幅計算
+  // メインコンテンツのmax-w-[90vw]を考慮した展開幅計算
   const viewportWidth = window.innerWidth
-  const maxContentWidth = viewportWidth * 0.85 // mainのmax-w-[85vw]
+  const maxContentWidth = viewportWidth * 0.9 // mainのmax-w-[90vw]
 
   // 実際に使用可能な幅（中央寄せを考慮）
   const startX = (viewportWidth - maxContentWidth) / 2
@@ -44,9 +44,15 @@ const generateRandomPosition = () => {
   // calc(1.8rem + 0.3vw) の最大値を考慮（約40-50px程度）
   const iconMargin = 60
 
+  // 常時表示のグローバルナビの高さ + 余白を含めたおおよその見た目の高さ
+  const headerHeight = 90
+
+  const startY = (window.innerHeight - headerHeight) / 2
+
   return {
     x: startX + Math.random() * (maxContentWidth - iconMargin),
-    y: Math.random() * (window.innerHeight - iconMargin),
+    // y: Math.random() * (window.innerHeight - iconMargin),
+    y: startY + Math.random() * (window.innerHeight - iconMargin),
     opacity: 0,
     scale: 0.5,
   }
@@ -67,12 +73,13 @@ const startAnimation = () => {
     setTimeout(() => {
       // アイコン中央集合（同時にフェードアウト）
       step.value = 1
-      // メインコンテンツのmax-w-[85vw]を考慮した中央位置を計算
+      // メインコンテンツのmax-w-[90vw]を考慮した中央位置を計算
       const viewportWidth = window.innerWidth
-      const maxContentWidth = viewportWidth * 0.85
+      const maxContentWidth = viewportWidth * 0.9
       const startX = (viewportWidth - maxContentWidth) / 2
       const centerX = startX + maxContentWidth / 2 // コンテンツ領域の中央
-      const centerY = window.innerHeight / 2 - 40 // edit文字の中心位置に調整
+      const centerY = window.innerHeight / 2 // edit文字の中心位置に調整
+      // const centerY = window.innerHeight / 2 - 40 // edit文字の中心位置に調整
       floatingIcons.value.forEach((icon, i) => {
         setTimeout(() => {
           icon.x = centerX
@@ -111,9 +118,9 @@ const skip = () => {
   step.value = 2
   isAnimating.value = false
 
-  // メインコンテンツのmax-w-[85vw]を考慮した中央位置を計算
+  // メインコンテンツのmax-w-[90vw]を考慮した中央位置を計算
   const viewportWidth = window.innerWidth
-  const maxContentWidth = viewportWidth * 0.85
+  const maxContentWidth = viewportWidth * 0.9
   const startX = (viewportWidth - maxContentWidth) / 2
   const centerX = startX + maxContentWidth / 2 - 24
   const centerY = window.innerHeight / 2 - 24
@@ -126,18 +133,30 @@ const skip = () => {
   }))
 }
 
-onMounted(() => startAnimation())
+// アニメーションの起点を定義
+onMounted(() => {
+  console.log('localStorage テスト実行') // ← 確認用
+  localStorage.setItem('testKey', 'hello')
+  const hasSeen = sessionStorage.getItem('hasSeenAnimation')
+  if (hasSeen) {
+    // すでに見た場合はアニメーションをスキップ
+    skip()
+  } else {
+    // 初回はアニメーションを実行
+    startAnimation()
+    sessionStorage.setItem('hasSeenAnimation', 'true')
+  }
+})
 </script>
 
 <template>
-  <div class="hero-animation relative h-screen w-full overflow-hidden">
+  <div class="relative h-screen w-full overflow-hidden bg-green-100">
     <button
       @click="skip"
       v-if="isAnimating"
-      class="font-ibm text-charcoal-gray/60 hover:bg-charcoal-gray/5 absolute top-0 right-0 z-50 px-4 py-2 text-[calc(0.85rem+0.2vw)] leading-[1.5] font-medium underline"
+      aria-label="スキップしてメイン画面へ"
+      class="font-ibm text-charcoal-gray/60 hover:bg-charcoal-gray/5 decoration-charcoal-gray/60 absolute top-0 right-0 z-50 px-4 py-2 text-[calc(0.85rem+0.2vw)] leading-[1.5] font-medium underline decoration-2 underline-offset-8"
     >
-      <!-- text-gradation-white bg-charcoal-gray/50 -->
-      <!-- class="font-ibm absolute top-0 right-0 z-50 rounded px-4 py-2 text-[calc(0.85rem+0.2vw)] leading-[1.5] font-medium underline transition-colors duration-200 ease-in-out" -->
       Skip
     </button>
     <HeroIntro :show="showEdit" />
