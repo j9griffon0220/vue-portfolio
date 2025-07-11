@@ -1,4 +1,5 @@
-<!-- vue の雛形ファイル -->
+<!-- HeroAnimation.vueのコンポーネントファイル -->
+<!-- 画面を白くフェードさせる -->
 <script setup>
 // importや状態の定義
 defineProps({ show: Boolean })
@@ -6,9 +7,8 @@ defineProps({ show: Boolean })
 
 <template>
   <transition name="fade">
-    <div v-if="show" class="absolute inset-0 bg-white z-30 opacity-100"></div>
+    <div v-if="show" class="absolute inset-0 z-30 bg-white opacity-100"></div>
   </transition>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
