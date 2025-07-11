@@ -1,15 +1,20 @@
+<!-- HeroAnimation.vueのコンポーネントファイル -->
+<!-- アイコンをランダムに表示して中央に集める -->
 <script setup>
 import Icon from '@/components/Icon.vue'
 defineProps({
   icons: Array,
   skillIcons: Array,
-  step: Number
+  step: Number,
 })
 </script>
 
+<!-- アイコンサイズはSkillsDetailsの時と同じサイズ感 -->
 <template>
-  <div v-for="(icon, index) in icons" :key="index"
-    class="absolute transition-all duration-1000 ease-in-out flex items-center justify-center"
+  <div
+    v-for="(icon, index) in icons"
+    :key="index"
+    class="absolute flex items-center justify-center transition-all duration-1000 ease-in-out"
     :style="{
       left: `${icon.x}px`,
       top: `${icon.y}px`,
@@ -17,12 +22,11 @@ defineProps({
       transform: `translate(-50%, -50%) scale(${icon.scale})`,
       zIndex: step === 1 ? 20 : 5,
       width: 'calc(1.8rem + 0.3vw)',
-      height: 'calc(1.8rem + 0.3vw)'
+      height: 'calc(1.8rem + 0.3vw)',
     }"
   >
-    <Icon :name="skillIcons[index]" class="w-full h-full text-accent-gray" />
+    <Icon :name="skillIcons[index]" class="text-accent-gray h-full w-full" />
   </div>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
