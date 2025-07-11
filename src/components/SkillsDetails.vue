@@ -147,7 +147,7 @@ const skills = {
           :name="skill.icon"
           class="text-accent-gray inline-block h-[calc(1.8rem+0.3vw)] w-[calc(1.8rem+0.3vw)] shrink-0"
         />
-        <span>{{ skill.name }}- {{ skill.description }}</span>
+        <span>{{ skill.name }} ： {{ skill.description }}</span>
       </li>
     </ul>
   </div>
