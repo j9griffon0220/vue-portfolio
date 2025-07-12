@@ -30,13 +30,6 @@ const handleClick = (value) => {
           : 'text-charcoal-gray/60 hover:bg-charcoal-gray/5',
       ]"
     >
-      <!-- <li
-      class="font-ibm text-charcoal-gray mb-[clamp(1.95rem,1.95rem+0.30vw,2.44rem)] text-[calc(0.9rem+0.25vw)] leading-[1.5] font-normal"
-      v-for="category in categories"
-      :key="category.value"
-      :class="{ active: category.value === selectedCategory }"
-      @click="handleClick(category.value)"
-    > -->
       {{ category.label }}
     </li>
   </ul>
