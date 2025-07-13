@@ -6,6 +6,7 @@ if (import.meta.env.VITE_DEBUG === 'true') {
 import Header from '@/components/SiteHeader.vue'
 import Footer from '@/components/SiteFooter.vue'
 import { useRoute } from 'vue-router'
+import ScrollToTop from '@/components/ScrollToTop.vue'
 
 // 現在のルート情報を取得
 const route = useRoute()
@@ -29,6 +30,7 @@ const route = useRoute()
       </main>
       <!-- 高さ指定なし -->
       <Footer />
+      <ScrollToTop />
     </div>
   </div>
 </template>
