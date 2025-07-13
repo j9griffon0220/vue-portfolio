@@ -18,7 +18,7 @@
     to="/"
     class="font-ibm text-charcoal-gray/60 hover:bg-charcoal-gray/5 mb-[clamp(1.95rem,1.95rem+0.30vw,2.44rem)] ml-auto block w-fit px-4 py-2 text-right text-[calc(0.85rem+0.2vw)] leading-[1.5] font-medium transition-colors duration-200 ease-in-out"
   >
-    トップへ戻る
+    トップへもどる
   </router-link>
 </template>
 
