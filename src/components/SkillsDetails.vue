@@ -15,7 +15,7 @@ const skills = {
   フロントエンド: [
     {
       name: 'HTML',
-      icon: 'html5', // これが
+      icon: 'html5',
       description:
         'W3C Markup Validationを使用し、文法エラーがないようマークアップ。',
     },
@@ -46,7 +46,8 @@ const skills = {
     {
       name: 'Vue.js',
       icon: 'vuejs',
-      description: '',
+      description:
+        'vue-routerを活用し、状態管理とページ切替を効率化。use/headでmeta情報を動的に設定。',
     },
   ],
   バックエンド: [
