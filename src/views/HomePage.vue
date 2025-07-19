@@ -15,7 +15,7 @@ useHead({
 </script>
 
 <template>
-  <div>
+  <div class="h-full">
     <HeroAnimation />
   </div>
 </template>
