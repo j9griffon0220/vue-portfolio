@@ -150,7 +150,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="relative h-screen w-full overflow-hidden bg-green-100">
+  <div class="relative h-full w-full overflow-hidden bg-green-100">
     <button
       @click="skip"
       v-if="isAnimating"
