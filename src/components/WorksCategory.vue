@@ -18,7 +18,7 @@ const handleClick = (value) => {
 </script>
 
 <template>
-  <ul>
+  <ul class="list-inside list-disc">
     <li
       v-for="category in categories"
       :key="category.value"
