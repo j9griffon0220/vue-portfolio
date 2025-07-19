@@ -9,7 +9,9 @@ useHead({
   meta: [
     { name: 'description', content: '制作実績ページです。' },
     { property: 'og:title', content: 'Works | Ayako Nakayama portfolio' },
-    { property: 'og:url', content: 'https://your-portfolio.com/works' },
+    { property: 'og:description', content: '制作実績ページです。' },
+    // og:urlまだ
+    { property: 'og:url', content: 'https://000/works' },
   ],
 })
 
