@@ -9,7 +9,9 @@ useHead({
   meta: [
     { name: 'description', content: 'スキル紹介ページです。' },
     { property: 'og:title', content: 'Skills | Ayako Nakayama portfolio' },
-    { property: 'og:url', content: 'https://your-portfolio.com/skills' },
+    { property: 'og:description', content: 'スキル紹介ページです。' },
+    // og:urlまだ
+    { property: 'og:url', content: 'https://000000/skills' },
   ],
 })
 
@@ -24,7 +26,7 @@ const selectedCategory = ref('フロントエンド')
   >
     Skill・{{ selectedCategory }}
   </h1>
-  <div class="h-screen flex min-h-0 w-full flex-1 flex-wrap">
+  <div class="flex h-screen min-h-0 w-full flex-1 flex-wrap">
     <!-- 左エリア（カテゴリー選択） -->
     <SkillsCategory
       class="flex-shrink-0 flex-grow basis-[30ch] overflow-visible"
