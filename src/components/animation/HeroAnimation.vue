@@ -1,9 +1,14 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, nextTick } from 'vue'
 import HeroIntro from './HeroIntro.vue'
 import DeviconCloud from './DeviconCloud.vue'
 import WhiteoutOverlay from './WhiteoutOverlay.vue'
 import TitleReveal from './TitleReveal.vue'
+
+// アニメーション表示エリアDOM取得用の ref() を追加
+const heroArea = ref(null)
+// heroAreaInfoは数値情報を持つオブジェクト（位置とサイズの数値情報）
+let heroAreaInfo = null // ← これが必要！
 
 // ステート・各要素の表示/非表示を管理
 const step = ref(0)
@@ -31,28 +36,47 @@ const skillIcons = [
 ]
 const floatingIcons = ref([])
 
+// 再利用しやすいように関数にして座標を取る
+function updateHeroAreaInfo() {
+  heroAreaInfo = heroArea.value.getBoundingClientRect() // ← heroAreaInfo に代入
+}
+
+// 再利用しやすいようcenterX / centerY の計算を関数に
+function getHeroAreaCenter() {
+  updateHeroAreaInfo() // 座標を取る
+  return {
+    x: heroAreaInfo.left + heroAreaInfo.width / 2,
+    y: heroAreaInfo.left + heroAreaInfo.width / 2,
+  }
+}
+
+onMounted(async () => {
+  await nextTick() // 描画完了を待つ
+  updateHeroAreaInfo()
+  const { x: centerX, y: centerY } = getHeroAreaCenter()
+  console.log('[updateHeroAreaInfo] top:', heroAreaInfo.top)
+  console.log(
+    '[updateHeroAreaInfo] centerY:',
+    heroAreaInfo.top + heroAreaInfo.height / 2,
+  )
+  console.log('[updateHeroAreaInfo] window center:', window.innerHeight / 2)
+})
+
 // ランダム位置生成
 const generateRandomPosition = () => {
-  // メインコンテンツのmax-w-[90vw]を考慮した展開幅計算
-  const viewportWidth = window.innerWidth
-  const maxContentWidth = viewportWidth * 0.9 // mainのmax-w-[90vw]
-
-  // 実際に使用可能な幅（中央寄せを考慮）
-  const startX = (viewportWidth - maxContentWidth) / 2
-
   // アイコンサイズを考慮したマージン計算
   // calc(1.8rem + 0.3vw) の最大値を考慮（約40-50px程度）
   const iconMargin = 60
 
-  // 常時表示のグローバルナビの高さ + 余白を含めたおおよその見た目の高さ
-  const headerHeight = 90
-
-  const startY = (window.innerHeight - headerHeight) / 2
-
   return {
-    x: startX + Math.random() * (maxContentWidth - iconMargin),
-    // y: Math.random() * (window.innerHeight - iconMargin),
-    y: startY + Math.random() * (window.innerHeight - iconMargin),
+    x:
+      heroAreaInfo.left +
+      iconMargin +
+      Math.random() * (heroAreaInfo.width - iconMargin * 2),
+    y:
+      heroAreaInfo.top +
+      iconMargin +
+      Math.random() * (heroAreaInfo.height - iconMargin * 2),
     opacity: 0,
     scale: 0.5,
   }
@@ -61,7 +85,9 @@ const generateRandomPosition = () => {
 // アニメーション進行
 const startAnimation = () => {
   showEdit.value = true
-  floatingIcons.value = skillIcons.map(() => generateRandomPosition())
+  floatingIcons.value = skillIcons.map(() =>
+    generateRandomPosition(heroAreaInfo),
+  )
   setTimeout(() => {
     // アイコン表示
     floatingIcons.value.forEach((icon, i) => {
@@ -70,16 +96,14 @@ const startAnimation = () => {
         icon.scale = 1
       }, i * 100)
     })
-    setTimeout(() => {
+    setTimeout(async () => {
       // アイコン中央集合（同時にフェードアウト）
       step.value = 1
-      // メインコンテンツのmax-w-[90vw]を考慮した中央位置を計算
-      const viewportWidth = window.innerWidth
-      const maxContentWidth = viewportWidth * 0.9
-      const startX = (viewportWidth - maxContentWidth) / 2
-      const centerX = startX + maxContentWidth / 2 // コンテンツ領域の中央
-      const centerY = window.innerHeight / 2 // edit文字の中心位置に調整
-      // const centerY = window.innerHeight / 2 - 40 // edit文字の中心位置に調整
+
+      await nextTick()
+      updateHeroAreaInfo()
+      const { x: centerX, y: centerY } = getHeroAreaCenter()
+
       floatingIcons.value.forEach((icon, i) => {
         setTimeout(() => {
           icon.x = centerX
@@ -111,19 +135,19 @@ const startAnimation = () => {
 }
 
 // スキップ
-const skip = () => {
+const skip = async () => {
   showEdit.value = false
   showWhiteout.value = false
   showTitle.value = true
   step.value = 2
   isAnimating.value = false
 
-  // メインコンテンツのmax-w-[90vw]を考慮した中央位置を計算
-  const viewportWidth = window.innerWidth
-  const maxContentWidth = viewportWidth * 0.9
-  const startX = (viewportWidth - maxContentWidth) / 2
-  const centerX = startX + maxContentWidth / 2 - 24
-  const centerY = window.innerHeight / 2 - 24
+  // DOM更新を待ってから中心取得
+  await nextTick()
+  updateHeroAreaInfo()
+  const { x: centerX, y: centerY } = getHeroAreaCenter()
+  // const centerX = heroAreaInfo.left + heroAreaInfo.width / 2
+  // const centerY = heroAreaInfo.top + heroAreaInfo.height / 2
 
   floatingIcons.value = skillIcons.map(() => ({
     x: centerX,
@@ -134,9 +158,11 @@ const skip = () => {
 }
 
 // アニメーションの起点を定義
-onMounted(() => {
+onMounted(async () => {
+  await nextTick()
   console.log('localStorage テスト実行') // ← 確認用
   localStorage.setItem('testKey', 'hello')
+  updateHeroAreaInfo()
   const hasSeen = sessionStorage.getItem('hasSeenAnimation')
   if (hasSeen) {
     // すでに見た場合はアニメーションをスキップ
@@ -150,7 +176,10 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="relative h-full w-full overflow-hidden bg-green-100">
+  <div
+    ref="heroArea"
+    class="relative h-full w-full overflow-hidden bg-green-100"
+  >
     <button
       @click="skip"
       v-if="isAnimating"
