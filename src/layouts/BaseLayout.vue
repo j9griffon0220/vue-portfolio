@@ -20,6 +20,7 @@ const route = useRoute()
         'mx-auto max-w-[90vw] pt-[clamp(1.56rem,1.56rem+0.25vw,1.95rem)] pb-[clamp(1.56rem,1.56rem+0.25vw,1.95rem)]',
         // route.path === '/' ? 'flex min-h-screen flex-col' : '',
         route.path === '/' ? 'flex h-screen flex-col' : '',
+        // route.path !== '/' ? 'overflow-hidden' : '',
       ]"
     >
       <!-- 高さ指定なし -->
