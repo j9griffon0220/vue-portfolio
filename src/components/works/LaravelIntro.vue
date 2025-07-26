@@ -13,7 +13,7 @@
       class="font-ibm text-soft-gray space-y-[clamp(1.25rem,1.25rem+0.20vw,1.56rem)] text-[calc(0.9rem+0.25vw)] leading-[1.5] font-normal whitespace-normal"
     >
       <p>
-        カウンセラーの知人向けに、フォーム付きの紹介用サイトをLaravelで構築しました。
+        個人開業のカウンセラーの方向けに、紹介とお問い合わせ機能を備えたWebサイトをLaravelで個人開発しました。
       </p>
       <p>
         お問い合わせを受けられるようフォームを設置し、送信内容がクライアントの
