@@ -36,30 +36,38 @@ const skillIcons = [
 ]
 const floatingIcons = ref([])
 
+// 子コンポーネント HeroIntro内の h1 にアクセス用
+const introEditRef = ref(null)
+
+// HeroIntro内の h1 座標を取得して中心に集める
+function getIntroTitleCenter() {
+  const el = introEditRef.value?.introTitle
+  const editArea = el.getBoundingClientRect()
+  return {
+    x: editArea.left + editArea.width / 2,
+    y: editArea.top + editArea.height / 2,
+  }
+}
+// const introEditInfo = introEditRef.value?.introTitle?.getBoundingClientRect()
+
 // 再利用しやすいように関数にして座標を取る
 function updateHeroAreaInfo() {
   heroAreaInfo = heroArea.value.getBoundingClientRect() // ← heroAreaInfo に代入
 }
 
-// 再利用しやすいようcenterX / centerY の計算を関数に
+// 再利用しやすいよう描画領域 の計算を関数に
 function getHeroAreaCenter() {
   updateHeroAreaInfo() // 座標を取る
   return {
     x: heroAreaInfo.left + heroAreaInfo.width / 2,
-    y: heroAreaInfo.left + heroAreaInfo.width / 2,
+    y: heroAreaInfo.top + heroAreaInfo.height / 2,
   }
 }
 
 onMounted(async () => {
   await nextTick() // 描画完了を待つ
   updateHeroAreaInfo()
-  const { x: centerX, y: centerY } = getHeroAreaCenter()
-  console.log('[updateHeroAreaInfo] top:', heroAreaInfo.top)
-  console.log(
-    '[updateHeroAreaInfo] centerY:',
-    heroAreaInfo.top + heroAreaInfo.height / 2,
-  )
-  console.log('[updateHeroAreaInfo] window center:', window.innerHeight / 2)
+  const { x: centerX, y: centerY } = getIntroTitleCenter()
 })
 
 // ランダム位置生成
@@ -102,7 +110,8 @@ const startAnimation = () => {
 
       await nextTick()
       updateHeroAreaInfo()
-      const { x: centerX, y: centerY } = getHeroAreaCenter()
+      const { x: centerX, y: centerY } = getIntroTitleCenter()
+      // const { x: centerX, y: centerY } = getHeroAreaCenter()
 
       floatingIcons.value.forEach((icon, i) => {
         setTimeout(() => {
@@ -188,7 +197,7 @@ onMounted(async () => {
     >
       Skip
     </button>
-    <HeroIntro :show="showEdit" />
+    <HeroIntro :show="showEdit" ref="introEditRef" />
     <DeviconCloud
       :step="step"
       :icons="floatingIcons"
