@@ -11,7 +11,7 @@ defineProps({
 
 <!-- アイコンサイズはSkillsDetailsの時と同じサイズ感 -->
 <template>
-  <div class="h-full">
+  <div class="relative h-full">
     <div
       v-for="(icon, index) in icons"
       :key="index"
