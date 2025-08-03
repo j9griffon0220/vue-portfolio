@@ -14,7 +14,7 @@ defineProps({ show: Boolean })
       >
         <!-- h1にtranslate-y-[-4rem]を入れてとりあえず見た目の位置を調整保留 一旦削除7.8-->
         <h1
-          class="font-ibm text-charcoal-gray animate-fade-in text-center text-[calc(1.8rem+0.3vw)] leading-[1.2] font-semibold"
+          class="font-roboto text-charcoal-gray animate-fade-in text-center text-[calc(1.8rem+0.3vw)] leading-[1.2] font-semibold italic"
         >
           Ayako Nakayama portfolio
         </h1>
