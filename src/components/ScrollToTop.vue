@@ -26,7 +26,7 @@ onUnmounted(() => {
   <button
     v-show="isVisible"
     @click="scrollToTop"
-    class="font-ibm text-gradation-white bg-charcoal-gray/60 hover:bg-charcoal-gray/5 hover:text-charcoal-gray/60 fixed right-[5vw] [bottom:calc(1rem+env(safe-area-inset-bottom))] block w-fit px-4 py-2 text-[calc(0.85rem+0.2vw)] leading-[1.5] font-medium transition-colors duration-200 ease-in-out"
+    class="font-ibm text-nuance-gray bg-charcoal-gray/60 hover:bg-charcoal-gray/5 hover:text-charcoal-gray/60 fixed right-[5vw] [bottom:calc(1rem+env(safe-area-inset-bottom))] block w-fit px-4 py-2 text-[calc(0.85rem+0.2vw)] leading-[1.5] font-medium transition-colors duration-200 ease-in-out"
     aria-label="上にもどる"
   >
     ↑
