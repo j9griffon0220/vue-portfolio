@@ -13,7 +13,7 @@ const route = useRoute()
 </script>
 
 <template>
-  <div class="bg-gradient-test">
+  <div class="bg-nuance-gray">
     <!-- 条件分岐：トップページ（Home.vue）の時だけブラウザの高さにヘッダーフッター含めピッタリ収める -->
     <div
       :class="[
@@ -27,7 +27,7 @@ const route = useRoute()
 
       <!-- メインコンテンツ（各ページのviewsファイルが入る） -->
       <!-- <main class="flex-1 overflow-hidden"> -->
-      <main class="flex-1">
+      <main class="mb-[clamp(1.25rem,1.25rem+0.20vw,1.56rem)] flex-1">
         <router-view />
       </main>
       <!-- 高さ指定なし -->
