@@ -114,9 +114,15 @@ const skills = {
     {
       name: 'PHPUnit',
       icon: '',
-      description: '',
+      description:
+        'バリデーションや例外処理、メール送信ロジックを対象に、Unit/Featureテストを実施。',
     },
-    { name: 'Laravel Dusk', icon: '', description: '' },
+    {
+      name: 'Laravel Dusk',
+      icon: '',
+      description:
+        ' Laravelに統合された環境で、フォームの入力〜送信完了までの流れをE2Eで検証。',
+    },
     {
       name: 'Playwright',
       icon: 'playwright',
@@ -138,15 +144,16 @@ const skills = {
     >
       {{ props.selectedCategory }}
     </h2>
-    <ul class="">
+    <ul>
       <li
         class="font-ibm text-charcoal-gray mb-[clamp(1.56rem,1.56rem+0.25vw,1.95rem)] flex items-start space-x-[clamp(1.95rem,1.95rem+0.30vw,2.44rem)] text-[calc(0.9rem+0.25vw)] leading-[1.5] font-normal"
         v-for="skill in skills[selectedCategory]"
         :key="skill.name"
       >
         <Icon
+          v-if="skill.icon"
           :name="skill.icon"
-          class="text-accent-gray inline-block h-[calc(1.8rem+0.3vw)] w-[calc(1.8rem+0.3vw)] shrink-0"
+          class="text-smoky-aqua inline-block h-[calc(1.8rem+0.3vw)] w-[calc(1.8rem+0.3vw)] shrink-0"
         />
         <span>{{ skill.name }} ： {{ skill.description }}</span>
       </li>
