@@ -263,7 +263,7 @@ onMounted(() => {
 <template>
   <div
     ref="heroArea"
-    class="relative h-full w-full overflow-hidden bg-green-100"
+    class="bg-nuance-white relative h-full w-full overflow-hidden"
   >
     <button
       @click="skip"
