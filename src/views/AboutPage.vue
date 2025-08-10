@@ -14,11 +14,11 @@ useHead({
 </script>
 
 <template>
-  <div>
+  <div class="min-h-screen">
     <!-- aboutページについては左右２分割でいくのかどうするのか含め検討中 -->
     <!-- 左エリアの内容 -->
     <h1
-      class="font-ibm text-charcoal-gray after:bg-charcoal-gray/30 relative mb-[clamp(2.44rem,2.44rem+0.35vw,3.05rem)] text-center text-[calc(1.8rem+0.3vw)] leading-[1.2] font-semibold break-words after:absolute after:right-0 after:bottom-0 after:bottom-[-1rem] after:left-0 after:mx-auto after:h-0.5 after:w-full after:content-['']"
+      class="font-ibm text-charcoal-gray after:bg-charcoal-gray/30 relative mb-[clamp(3.05rem,3.05rem+0.40vw,3.81rem)] text-center text-[calc(1.8rem+0.3vw)] leading-[1.2] font-medium break-words after:absolute after:right-0 after:bottom-0 after:bottom-[-1.5rem] after:left-0 after:mx-auto after:h-0.5 after:w-full after:content-['']"
     >
       About
     </h1>
@@ -45,6 +45,6 @@ useHead({
       </p>
       <p>※現在、Aboutページの記述を調整中です。随時更新予定です。</p>
     </div>
-    <!-- 左エリアの内容 -->
   </div>
+  <!-- 左エリアの内容 -->
 </template>
