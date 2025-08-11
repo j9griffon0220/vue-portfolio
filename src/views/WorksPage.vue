@@ -39,22 +39,20 @@ const selectedCategoryLabel = computed(() => {
     >
       Works・{{ selectedCategoryLabel }}
     </h1>
-    <div class="flex min-h-0 w-full flex-1 flex-wrap">
+
+    <div class="flex min-h-screen w-full flex-wrap">
       <!-- <div class="flex h-full flex-wrap"> -->
       <!-- 左エリア（カテゴリー選択） -->
       <WorksCategory
-        class="flex-shrink-0 flex-grow basis-[30ch]"
+        class="min-h-0 flex-1 flex-shrink-0 flex-grow basis-[30ch]"
         :categories="categories"
         :selected-category="selectedCategory"
         @update:selected-category="selectedCategory = $event"
       />
-      <!-- class="flex-shrink-0 flex-grow basis-[20rem]" -->
-      <!-- class="min-w-0 flex-grow basis-1/2"-->
-      <!-- class="max-w-[50%] flex-[1_1_50%]" -->
 
       <!-- 右エリア（スキル詳細） -->
       <WorksDetails
-        class="flex-shrink-0 flex-grow basis-[30ch] overflow-auto"
+        class="min-h-0 flex-1 flex-shrink-0 flex-grow basis-[30ch] overflow-auto"
         :selected-category="selectedCategory"
         :selected-category-label="selectedCategoryLabel"
         :categories="categories"
