@@ -27,7 +27,9 @@ const route = useRoute()
 
       <!-- メインコンテンツ（各ページのviewsファイルが入る） -->
       <!-- <main class="flex-1 overflow-hidden"> -->
-      <main class="mb-[clamp(1.25rem,1.25rem+0.20vw,1.56rem)] flex-1">
+      <main
+        class="mb-[clamp(1.25rem,1.25rem+0.20vw,1.56rem)] flex-1 overflow-hidden"
+      >
         <router-view />
       </main>
       <!-- 高さ指定なし -->
