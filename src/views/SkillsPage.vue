@@ -37,7 +37,7 @@ const selectedCategory = ref('フロントエンド')
 
       <!-- 右エリア（スキル詳細） -->
       <SkillsDetails
-        class="min-h-0 flex-shrink-0 flex-grow basis-[30ch] overflow-auto"
+        class="min-h-0 flex-1 flex-shrink-0 flex-grow basis-[30ch] overflow-auto"
         :selected-category="selectedCategory"
       />
     </div>
