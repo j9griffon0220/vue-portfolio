@@ -21,9 +21,11 @@ useHead({
       Sample・Title
     </h1>
 
-    <div class="flex min-h-0 w-full flex-1 basis-[30ch] flex-wrap bg-gray-200">
+    <div
+      class="flex min-h-screen w-full flex-1 basis-[30ch] flex-wrap bg-gray-200"
+    >
       <!-- 左エリアの内容 -->
-      <p class="flex-shrink-0 flex-grow basis-[30ch]">
+      <p class="min-h-0 flex-1 flex-shrink-0 flex-grow basis-[30ch]">
         左○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○
       </p>
       <!-- 右エリアの内容 -->
