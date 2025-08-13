@@ -28,16 +28,16 @@ const selectedCategory = ref('フロントエンド')
       Skill・{{ selectedCategory }}
     </h1>
 
-    <div class="flex min-h-screen w-full flex-wrap">
+    <!-- h-screen min-h-screen h-full -->
+    <div class="@container/main flex h-screen w-full flex-wrap">
       <!-- 左エリア（カテゴリー選択） -->
       <SkillsCategory
         class="min-h-0 flex-1 flex-shrink-0 flex-grow basis-[30ch]"
         v-model:selected-category="selectedCategory"
       />
-
       <!-- 右エリア（スキル詳細） -->
       <SkillsDetails
-        class="min-h-0 flex-1 flex-shrink-0 flex-grow basis-[30ch] overflow-auto"
+        class="min-h-0 flex-1 flex-shrink-0 flex-grow basis-[30ch] @2xl/main:max-h-[calc(100vh-11.7rem)] @2xl/main:overflow-y-auto"
         :selected-category="selectedCategory"
       />
     </div>
