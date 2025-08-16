@@ -20,7 +20,7 @@ const selectedCategory = ref('フロントエンド')
 </script>
 
 <template>
-  <div class="min-h-screen">
+  <div>
     <!-- 選択されたカテゴリーを表示 -->
     <h1
       class="font-ibm text-charcoal-gray after:bg-charcoal-gray/30 relative mb-[clamp(3.05rem,3.05rem+0.40vw,3.81rem)] text-center text-[calc(1.8rem+0.3vw)] leading-[1.2] font-medium break-words after:absolute after:right-0 after:bottom-0 after:bottom-[-1.5rem] after:left-0 after:mx-auto after:h-0.5 after:w-full after:content-['']"
@@ -28,14 +28,14 @@ const selectedCategory = ref('フロントエンド')
       Skill・{{ selectedCategory }}
     </h1>
 
-    <!-- h-screen min-h-screen h-full -->
-    <div class="@container/main flex h-screen w-full flex-wrap">
+    <div class="@container/main flex min-h-0 w-full flex-wrap">
       <!-- 左エリア（カテゴリー選択） -->
       <SkillsCategory
         class="min-h-0 flex-1 flex-shrink-0 flex-grow basis-[30ch]"
         v-model:selected-category="selectedCategory"
       />
       <!-- 右エリア（スキル詳細） -->
+      <!-- @2xl/main:max-h-[calc(100vh-11.7rem)]でヘッダー＋タイトルの高さを引く -->
       <SkillsDetails
         class="min-h-0 flex-1 flex-shrink-0 flex-grow basis-[30ch] @2xl/main:max-h-[calc(100vh-11.7rem)] @2xl/main:overflow-y-auto"
         :selected-category="selectedCategory"
