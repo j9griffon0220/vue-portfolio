@@ -146,7 +146,7 @@ const skills = {
     </h2>
     <ul>
       <li
-        class="font-ibm text-charcoal-gray mb-[clamp(1.56rem,1.56rem+0.25vw,1.95rem)] flex items-start space-x-[clamp(1.95rem,1.95rem+0.30vw,2.44rem)] text-[calc(0.9rem+0.25vw)] leading-[1.5] font-normal"
+        class="font-ibm text-charcoal-gray mb-[clamp(1.56rem,1.56rem+0.25vw,1.95rem)] flex items-start space-x-[clamp(1.95rem,1.95rem+0.30vw,2.44rem)] text-[calc(0.9rem+0.25vw)] leading-[1.5] font-normal last:mb-0"
         v-for="skill in skills[selectedCategory]"
         :key="skill.name"
       >
