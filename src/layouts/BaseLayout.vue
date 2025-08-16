@@ -13,12 +13,11 @@ const route = useRoute()
 </script>
 
 <template>
-  <div class="bg-nuance-gray">
+  <div class="bg-nuance-gray min-h-screen">
     <!-- 条件分岐：トップページ（Home.vue）の時だけブラウザの高さにヘッダーフッター含めピッタリ収める -->
     <div
       :class="[
         'mx-auto max-w-[90vw] pt-[clamp(1.56rem,1.56rem+0.25vw,1.95rem)] pb-[clamp(1.56rem,1.56rem+0.25vw,1.95rem)]',
-        // route.path === '/' ? 'flex min-h-screen flex-col' : '',
         route.path === '/' ? 'flex h-screen flex-col' : '',
       ]"
     >
@@ -26,9 +25,8 @@ const route = useRoute()
       <Header />
 
       <!-- メインコンテンツ（各ページのviewsファイルが入る） -->
-      <!-- <main class="flex-1 overflow-hidden"> -->
       <main
-        class="mb-[clamp(1.25rem,1.25rem+0.20vw,1.56rem)] flex-1 overflow-hidden"
+        class="mb-[clamp(1.95rem,1.95rem+0.30vw,2.44rem)] flex-1 overflow-hidden"
       >
         <router-view />
       </main>
