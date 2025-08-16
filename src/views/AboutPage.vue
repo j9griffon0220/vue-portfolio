@@ -36,11 +36,11 @@ useHead({
       class="font-ibm text-soft-gray mb-[clamp(1.56rem,1.56rem+0.25vw,1.95rem)] space-y-[clamp(1.25rem,1.25rem+0.20vw,1.56rem)] text-[calc(0.9rem+0.25vw)] leading-[1.5] font-normal whitespace-normal"
     >
       <p>
-        サーティファイ主催「Webクリエイター能力認定試験」（0000年）
+        サーティファイ主催「Webクリエイター能力認定試験」合格（2021年）
         <br />- マークアップの基本やWeb標準の理解を深めるために受験
       </p>
       <p>
-        宣伝会議主催「編集・ライター養成講座」修了（0000年） <br />-
+        宣伝会議主催「編集・ライター養成講座」24期修了（2012年） <br />-
         現職・エディターの仕事をしていく上で必要と考え受講
       </p>
       <p>※現在、Aboutページの記述を調整中です。随時更新予定です。</p>
