@@ -32,16 +32,15 @@ const selectedCategoryLabel = computed(() => {
 </script>
 
 <template>
-  <!-- 選択されたカテゴリーを表示 -->
-  <div class="min-h-screen">
+  <div>
+    <!-- 選択されたカテゴリーを表示 -->
     <h1
       class="font-ibm text-charcoal-gray after:bg-charcoal-gray/30 relative mb-[clamp(3.05rem,3.05rem+0.40vw,3.81rem)] text-center text-[calc(1.8rem+0.3vw)] leading-[1.2] font-medium break-words after:absolute after:right-0 after:bottom-0 after:bottom-[-1.5rem] after:left-0 after:mx-auto after:h-0.5 after:w-full after:content-['']"
     >
       Works・{{ selectedCategoryLabel }}
     </h1>
 
-    <div class="flex min-h-screen w-full flex-wrap">
-      <!-- <div class="flex h-full flex-wrap"> -->
+    <div class="@container/main flex min-h-0 w-full flex-wrap">
       <!-- 左エリア（カテゴリー選択） -->
       <WorksCategory
         class="min-h-0 flex-1 flex-shrink-0 flex-grow basis-[30ch]"
@@ -51,8 +50,9 @@ const selectedCategoryLabel = computed(() => {
       />
 
       <!-- 右エリア（スキル詳細） -->
+      <!-- @2xl/main:max-h-[calc(100vh-11.7rem)]でヘッダー＋タイトルの高さを引く -->
       <WorksDetails
-        class="min-h-0 flex-1 flex-shrink-0 flex-grow basis-[30ch] overflow-auto"
+        class="min-h-0 flex-1 flex-shrink-0 flex-grow basis-[30ch] @2xl/main:max-h-[calc(100vh-11.7rem)] @2xl/main:overflow-y-auto"
         :selected-category="selectedCategory"
         :selected-category-label="selectedCategoryLabel"
         :categories="categories"
