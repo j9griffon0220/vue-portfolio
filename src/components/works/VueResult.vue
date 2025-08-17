@@ -16,7 +16,9 @@
   <div
     class="font-ibm text-soft-gray mb-[clamp(1.56rem,1.56rem+0.25vw,1.95rem)] space-y-[clamp(1.25rem,1.25rem+0.20vw,1.56rem)] text-[calc(0.9rem+0.25vw)] leading-[1.5] font-normal whitespace-normal"
   >
-    <p>現在、Vueポートフォリオ Resultの記述を調整中です。随時更新予定です。</p>
+    <p>・コンポーネント設計を行い、再利用性を意識した構成を実装。</p>
+    <p>・vueの入れ子構造を踏まえ、CSS の継承を考慮したスタイル設計を実施。</p>
+    <p>・アニメーションや状態管理を用いて、動的な描画を実装。</p>
   </div>
 
   <h4
@@ -28,11 +30,14 @@
     class="font-ibm text-soft-gray mb-[clamp(1.56rem,1.56rem+0.25vw,1.95rem)] space-y-[clamp(1.25rem,1.25rem+0.20vw,1.56rem)] text-[calc(0.9rem+0.25vw)] leading-[1.5] font-normal whitespace-normal"
   >
     <p>
-      Vue を扱う中で、Laravel での同期的な開発との違いを実感しました。Vue
-      では非同期処理が基本となり、状態管理や描画タイミングへの理解がより求められると感じています。
+      コンポーネント単位の設計では構成の粒度が細かく、より「設計力」が問われることを学びました。
     </p>
     <p>
-      Vueではコンポーネント単位での設計が細かく、構成の粒度や再利用性を意識する場面が多いため、より「設計力」が問われると感じました。
+      Laravel のような同期的な処理と異なり、Vue
+      では非同期処理や描画タイミングの理解が重要だと実感。
+    </p>
+    <p>
+      アニメーションのデバッグでは、仮説を立てて検証を繰り返すことの大切さを体感し、課題解決力を鍛えられました。
     </p>
   </div>
 </template>
