@@ -58,9 +58,6 @@ async function getIntroTitleCenter() {
   //   return getHeroAreaCenter()
   // }
 
-  // const editArea = el.getBoundingClientRect()
-  // console.log('edit h1 position:', editArea) // デバッグ用
-
   // h1 要素の座標とサイズを取得（ビューポート基準の絶対座標）
   const h1Rect = el.getBoundingClientRect()
   const parentRect = heroArea.value.getBoundingClientRect()
@@ -68,28 +65,12 @@ async function getIntroTitleCenter() {
     x: h1Rect.left - parentRect.left + h1Rect.width / 2,
     y: h1Rect.top - parentRect.top + h1Rect.height / 2,
   }
-
-  // 左上の座標に幅/高さの半分を足して中心座標を計算し返す
-  // return {
-  //   x: editArea.left + editArea.width / 2,
-  //   y: editArea.top + editArea.height / 2,
-  // }
 }
-// const introEditInfo = introEditRef.value?.introTitle?.getBoundingClientRect()
 
 // heroAreaの位置とサイズ情報を更新する関数
 function updateHeroAreaInfo() {
   heroAreaInfo = heroArea.value.getBoundingClientRect() // ← heroAreaInfo に代入
 }
-
-// heroArea の中心座標を返す関数（座標はビューポート基準の絶対座標）
-// function getHeroAreaCenter() {
-//   updateHeroAreaInfo() // 座標を取る
-//   return {
-//     x: heroAreaInfo.left + heroAreaInfo.width / 2,
-//     y: heroAreaInfo.top + heroAreaInfo.height / 2,
-//   }
-// }
 
 // コンポーネントがマウントされた時（初期表示直後）に座標取得などの準備をする
 onMounted(async () => {
@@ -160,10 +141,6 @@ const startAnimation = async () => {
       // await を使って HeroIntro内h1の中心座標を取得（絶対座標）
       const center = await getIntroTitleCenter()
 
-      // icon.x = center.x
-      // icon.y = center.y
-      // icon.scale = 0.3
-      // floatingIcons.value.forEach((icon, i) => {
       // 各アイコンを中心座標に移動し、縮小・段階的フェードアウトさせる
       floatingIcons.value.forEach((_, i) => {
         setTimeout(() => {
@@ -224,9 +201,6 @@ const skip = async () => {
   await nextTick()
   updateHeroAreaInfo()
   const { x: centerX, y: centerY } = await getIntroTitleCenter()
-  // const { x: centerX, y: centerY } = getHeroAreaCenter()
-  // const centerX = heroAreaInfo.left + heroAreaInfo.width / 2
-  // const centerY = heroAreaInfo.top + heroAreaInfo.height / 2
 
   floatingIcons.value = skillIcons.map(() => ({
     x: centerX,
@@ -263,7 +237,7 @@ onMounted(() => {
 <template>
   <div
     ref="heroArea"
-    class="bg-nuance-white relative h-full w-full overflow-hidden"
+    class="bg-nuance-gray relative h-full w-full overflow-hidden"
   >
     <button
       @click="skip"
