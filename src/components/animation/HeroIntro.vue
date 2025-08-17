@@ -16,11 +16,6 @@ defineExpose({
 </script>
 
 <template>
-  <!-- <transition name="fade"> -->
-  <!-- <div
-      v-if="show"
-      class="absolute inset-0 z-10 flex items-center justify-center"
-    > -->
   <div
     v-show="show"
     class="absolute inset-0 z-10 flex items-center justify-center transition-opacity duration-500 ease-in-out"
@@ -33,5 +28,4 @@ defineExpose({
       edit
     </h1>
   </div>
-  <!-- </transition> -->
 </template>
