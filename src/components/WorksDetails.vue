@@ -26,7 +26,7 @@ const props = defineProps({
 // デフォルトの「タブのカテゴリ」
 const selectedTab = ref('intro')
 
-console.log(selectedTab.value)
+// console.log(selectedTab.value)
 
 // propsの categories を元に tabs を組み立てる
 const tabsMap = {
@@ -48,13 +48,7 @@ const currentTab = computed(() => {
   return tabsMap[category][tab]
 })
 
-console.log(props.categories)
-
-// console.log(currentTabs.value)
-// console.log("selectedTab.value:", selectedTab.value)
-// console.log("tabs:", tabs)
-
-// console.log("比較結果：", tab.value === selectedTab.value)
+// console.log(props.categories)
 </script>
 
 <template>
@@ -90,7 +84,6 @@ console.log(props.categories)
       </div>
 
       <!-- タブコンテンツ -->
-      <!-- class="pt-[clamp(1rem,1rem+0.5vw,1.5rem)] pb-[clamp(1rem,1rem+0.5vw,1.5rem)]" -->
       <div class="pb-[clamp(1rem,1rem+0.5vw,1.5rem)]">
         <component v-if="currentTab" :is="currentTab" />
       </div>
