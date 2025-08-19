@@ -1,6 +1,14 @@
 <!-- 404ページファイル -->
 <script setup>
-// importや状態の定義
+import { useHead } from '@vueuse/head'
+
+useHead({
+  title: '404 Not Found | Ayako Nakayama portfolio',
+  meta: [
+    { name: 'description', content: 'お探しのページは見つかりませんでした。' },
+    // ogなし・SPAのためSNSではトップページのみ反映
+  ],
+})
 </script>
 
 <template>
