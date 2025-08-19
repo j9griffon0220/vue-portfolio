@@ -26,7 +26,7 @@ defineProps({
         height: 'calc(1.8rem + 0.3vw)',
       }"
     >
-      <Icon :name="skillIcons[index]" class="text-accent-gray h-full w-full" />
+      <Icon :name="skillIcons[index]" class="text-smoky-aqua h-full w-full" />
     </div>
   </div>
 </template>
