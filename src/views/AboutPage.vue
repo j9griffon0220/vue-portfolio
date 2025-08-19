@@ -5,10 +5,7 @@ useHead({
   title: 'About | Ayako Nakayama portfolio',
   meta: [
     { name: 'description', content: '自己紹介ページです。' },
-    { property: 'og:title', content: 'About | Ayako Nakayama portfolio' },
-    { property: 'og:description', content: '自己紹介ページです。' },
-    // og:urlまだ
-    { property: 'og:url', content: 'https://00000/about' },
+    // ogなし・SPAのためSNSではトップページのみ反映
   ],
 })
 </script>
