@@ -8,10 +8,7 @@ useHead({
   title: 'Skills | Ayako Nakayama portfolio',
   meta: [
     { name: 'description', content: 'スキル紹介ページです。' },
-    { property: 'og:title', content: 'Skills | Ayako Nakayama portfolio' },
-    { property: 'og:description', content: 'スキル紹介ページです。' },
-    // og:urlまだ
-    { property: 'og:url', content: 'https://000000/skills' },
+    // ogなし・SPAのためSNSではトップページのみ反映
   ],
 })
 
