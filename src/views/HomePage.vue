@@ -9,7 +9,10 @@ useHead({
   meta: [
     { name: 'description', content: 'ポートフォリオトップページです。' },
     { property: 'og:title', content: 'Ayako Nakayama portfolio' },
-    { property: 'og:url', content: 'https://your-portfolio.com' },
+    {
+      property: 'og:url',
+      content: 'https://vue-portfolio-nine-plum.vercel.app/',
+    },
   ],
 })
 </script>
