@@ -5,9 +5,7 @@ useHead({
   title: 'Note | Ayako Nakayama portfolio',
   meta: [
     { name: 'description', content: '記事紹介ページです。' },
-    { property: 'og:title', content: 'Note | Ayako Nakayama portfolio' },
-    { property: 'og:description', content: '記事紹介ページです。' },
-    { property: 'og:url', content: 'https://your-portfolio.com/note' },
+    // ogなし・SPAのためSNSではトップページのみ反映
   ],
 })
 </script>
