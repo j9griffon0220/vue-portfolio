@@ -33,7 +33,7 @@
 
   <!-- GitHub へのリンク・今後追加予定 -->
   <a
-    href="https://github.com/000000"
+    href="https://github.com/j9griffon0220/vue-portfolio"
     target="_blank"
     rel="noopener noreferrer"
     area-label="portfolioのGitHubリポジトリを新しいタブで開く"
