@@ -17,9 +17,9 @@
   >
     <p>- フロントエンドへの関心とスキル習得を目的に、Vue 3 ＋ Viteを採用。</p>
     <p>
-      - スタイリングにはTailwind
-      CSSを採用。デザインの統一と開発効率の向上を意識しました。
+      - スタイリングは Tailwind CSS を導入し、デザインの統一と開発効率を向上。
     </p>
+    <p>- コード品質向上のため、eslint / prettier による整形ルールを設定</p>
   </div>
 
   <h4
@@ -31,21 +31,14 @@
     class="font-ibm text-soft-gray mb-[clamp(1.56rem,1.56rem+0.25vw,1.95rem)] space-y-[clamp(1.25rem,1.25rem+0.20vw,1.56rem)] text-[calc(0.9rem+0.25vw)] leading-[1.5] font-normal whitespace-normal"
   >
     <p>
-      -
-      印象に残るトップページを目指し、AIと協働しながらヒーローアニメーションを構成。実装はコード生成AI「Cursor」を活用。
-      AIとの協働により、効率と表現力の両立を目指しました。
+      - トップページでは ヒーローアニメーション
+      を構成し、AI（Cursor）を活用して効率的に実装。
     </p>
     <p>
       -
-      海外サイトに着想を得て左右分割レイアウトを採用。ラフスケッチをもとに調整しながら実装を進め、UI設計への理解を深めました。
+      海外サイトを参考に左右分割レイアウトを採用し、ラフスケッチをもとに情報配置と視線誘導を調整。
     </p>
-    <p>
-      - VueUse/head によるメタ情報管理や vue-router によるページ遷移、eslint /
-      prettier によるコード整形ルールを導入。
-    </p>
-    <p>
-      - 公開は GitHub を経由し、Vercel
-      にデプロイ。開発から公開までの一連の流れを経験することで、スキル習得を図っています。
-    </p>
+    <p>- ページ遷移は vue-router、メタ情報管理は VueUse/head を活用。</p>
+    <p>- 開発から公開までの一連の流れを GitHub + Vercel で経験。</p>
   </div>
 </template>
