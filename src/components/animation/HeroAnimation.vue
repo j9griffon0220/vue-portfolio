@@ -27,14 +27,18 @@ const skillIcons = [
   'vuejs',
   'laravel',
   'php',
+  'composer',
   'docker',
   'npm',
   'vitejs',
+  'vercel',
   'github',
   'sourcetree',
   'ssh',
   'playwright',
   'wordpress',
+  'photoshop',
+  'illustrator',
 ]
 
 // アイコンの現在の座標や状態（opacity/scale）を保持する配列
