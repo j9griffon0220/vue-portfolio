@@ -1,6 +1,5 @@
 <!-- Skillsページ・右側のcomponents -->
 <script setup>
-// import { ref, computed} from 'vue'
 import Icon from '@/components/Icon.vue'
 
 // 親から渡される props、definePropsで受け取る
@@ -35,7 +34,7 @@ const skills = {
       name: 'JavaScript',
       icon: 'javascript',
       description:
-        'Leafletなどのプラグインを用い、動的な地図描画やLaravelとの連携を実装。',
+        'Leafletなどのライブラリを用い、動的な地図描画やLaravelとの連携を実装。',
     },
     {
       name: 'jQuery',
@@ -69,7 +68,7 @@ const skills = {
       name: 'Docker',
       icon: 'docker',
       description:
-        'Laravel開発環境や、自社WordPress案件の学習環境として構築・使用。',
+        'Laravel開発環境や、現職・自社WordPressの学習環境として構築・使用。',
     },
     {
       name: 'npm',
@@ -82,6 +81,11 @@ const skills = {
       description: 'Vue開発時のビルドツールとして使用。',
     },
     {
+      name: 'Vercel',
+      icon: 'vercel',
+      description: 'Vue.jsポートフォリオをGitHub連携で自動デプロイ。',
+    },
+    {
       name: 'laravelmix',
       icon: '',
       description:
@@ -90,18 +94,20 @@ const skills = {
     {
       name: 'GitHub',
       icon: 'github',
-      description: 'Laravelサイトのデプロイやバージョン管理に使用。',
+      description:
+        'LaravelサイトやVueポートフォリオのコード管理・デプロイに使用。',
     },
     {
       name: 'SourceTree',
       icon: 'sourcetree',
       description:
-        'Laravelサイト制作・公開時にGit操作に使用。ブランチ管理やコミットを効率化。',
+        'Laravel・Vue開発でのGit操作に使用。ブランチ管理やコミットを効率化。',
     },
     {
       name: 'SSH',
       icon: 'ssh',
-      description: 'Laravelサイトのデプロイ時の接続・操作に使用。',
+      description:
+        'Laravelサイトのデプロイ時に、サーバーへの接続・操作に使用。',
     },
     {
       name: 'LocalTunnel',
@@ -132,6 +138,16 @@ const skills = {
       name: 'WordPress',
       icon: 'wordpress',
       description: 'Dockerで環境構築。操作・構造の習得に向けて学習中。',
+    },
+    {
+      name: 'Photoshop',
+      icon: 'photoshop',
+      description: 'Laravelのデザインカンプ作成や画像加工に使用。',
+    },
+    {
+      name: 'Illustrator',
+      icon: 'illustrator',
+      description: 'ロゴやアイコン制作に使用。',
     },
   ],
 }
