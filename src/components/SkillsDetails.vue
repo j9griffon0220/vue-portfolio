@@ -76,7 +76,7 @@ const skills = {
       description: 'LaravelやVue開発時に使用。パッケージ管理やビルドを効率化。',
     },
     {
-      name: 'vite',
+      name: 'Vite',
       icon: 'vitejs',
       description: 'Vue開発時のビルドツールとして使用。',
     },
