@@ -38,7 +38,7 @@
 
   <!-- GitHub へのリンク・今後追加予定 -->
   <a
-    href="https://github.com/000000"
+    href="https://github.com/j9griffon0220/laravel-portfolio"
     target="_blank"
     rel="noopener noreferrer"
     area-label="サイトのGitHubリポジトリを新しいタブで開く"
@@ -46,7 +46,7 @@
     <p
       class="font-ibm text-charcoal-gray hover:bg-charcoal-gray/5 mb-[clamp(1rem,1rem+0vw,1rem)] px-4 py-2 text-[calc(0.9rem+0.25vw)] leading-[1.5] font-medium transition-colors duration-200 ease-in-out"
     >
-      サイトのGitHubリポジトリはこちら（現在調整中）→
+      サイトのGitHubリポジトリはこちら→
     </p>
   </a>
 

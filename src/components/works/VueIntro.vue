@@ -31,7 +31,7 @@
     />
   </div>
 
-  <!-- GitHub へのリンク・今後追加予定 -->
+  <!-- GitHub へのリンク -->
   <a
     href="https://github.com/j9griffon0220/vue-portfolio"
     target="_blank"
